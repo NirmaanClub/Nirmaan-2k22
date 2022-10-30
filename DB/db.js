@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const connection = async () => {
     try{
-        await mongoose.connect('mongodb://localhost:27017', { useNewUrlParser: true,
+        await mongoose.connect('mongodb://localhost:27017/Nirmaan', { useNewUrlParser: true,
         useUnifiedTopology: true,});
         console.log("Connected to Datebase : Nirmaan");
     }catch(e){
