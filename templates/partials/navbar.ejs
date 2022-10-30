@@ -1,12 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>navbar</h1>
-</body>
-</html>
+<div class="site-mobile-menu site-navbar-target">
+    <div class="site-mobile-menu-header">
+      <div class="site-mobile-menu-close">
+        <span class="icon-close2 js-menu-toggle"></span>
+      </div>
+    </div>
+    <div class="site-mobile-menu-body"></div>
+  </div>
+
+  <!-- changed -->
+  <header id="navbar" class="site-navbar py-3 " role="banner">
+    <div class="container">
+      <div class="d-flex align-items-center">
+        <div class="site-logo">
+          <a href="/">
+            <img src="images/logo.png" alt="Nirmaan logo">
+          </a>
+        </div>
+        <!-- changed -->
+        <div class="ml-auto">
+          <nav class="site-navigation text-right " role="navigation">
+            <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
+              <li><a href="/" class="nav-link">Home</a></li>
+              <li><a href="#about" class="nav-link">About Us</a></li>
+              <li><a href="/events" class="nav-link">Events</a></li>
+              <li><a href="/OurTeam" class="nav-link">OurTeam</a></li>
+              <li><a href="/Gallery" class="nav-link">Gallery</a></li>
+            </ul>
+          </nav>
+          <!-- changed -->
+          <a href="#" class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black float-right text-white"><span
+              class="icon-menu h3 text-white"></span></a>
+        </div>
+      </div>
+    </div>
+
+  </header>
