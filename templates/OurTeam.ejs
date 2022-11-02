@@ -15,6 +15,15 @@
     <link rel="stylesheet" href="/css/ourteam.css">
     <link rel="stylesheet" href="/css/style.css">
 </head>
+
+<style>
+    .conti {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+</style>
+
 <body>
     <div class="navbarposition"
         style="position: relative;top:0px; left:0px;right: 0px; width: 100%; background-color: black;">
@@ -28,32 +37,39 @@
             </h1>
         </div>
         <div class="hr"></div>
-        <div class="profilecard">
-            <div class="hover">
+        <div class="conti">
+            <% for(let i=0;i<10;i++){%>
+                <div class="profilecard">
+                    <div class="hover">
 
-            </div>
-            <div class="circle">
-                <img src="https://static.remove.bg/remove-bg-web/ea3c274e1b7f6fbbfe93fad8b2b13d7ef352f09c/assets/start-1abfb4fe2980eabfbbaaa4365a0692539f7cd2725f324f904565a9a744f8e214.jpg"
-                    alt="">
-            </div>
-            <div class="info">
-                <span class="name">Lakshay Nailwal</span>
-                <span class="pos">Web Head</span>
-            </div>
-            <div class="links">
-                <ul class="nav justify-content-center" style="font-size:25px;">
-                    <li class="nav-item"><a style="color:black ;" target="_blank" href="" class="nav-link"><i
-                                class="fa-brands fa-instagram"></i></a>
-                    </li>
-                    <li class="nav-item"><a style="color:black ;" target="_blank" href="" class="nav-link"><i
-                                class="fa-brands fa-facebook-f"></i></a>
-                    </li>
-                    <li class="nav-item"><a href="" style="color: black;" target="_blank" class="nav-link"><i
-                                class="fa-brands fa-linkedin"></i></a></li>
-                </ul>
-            </div>
+                    </div>
+                    <div class="circle">
+                        <img src="https://static.remove.bg/remove-bg-web/ea3c274e1b7f6fbbfe93fad8b2b13d7ef352f09c/assets/start-1abfb4fe2980eabfbbaaa4365a0692539f7cd2725f324f904565a9a744f8e214.jpg"
+                            alt="">
+                    </div>
+                    <div class="info">
+                        <span class="name">Lakshay Nailwal</span>
+                        <span class="pos">Web Head</span>
+                    </div>
+                    <div class="links">
+                        <ul class="nav justify-content-center" style="font-size:25px;">
+                            <li class="nav-item"><a style="color:black ;" target="_blank" href="" class="nav-link"><i
+                                        class="fa-brands fa-instagram"></i></a>
+                            </li>
+                            <li class="nav-item"><a style="color:black ;" target="_blank" href="" class="nav-link"><i
+                                        class="fa-brands fa-facebook-f"></i></a>
+                            </li>
+                            <li class="nav-item"><a href="" style="color: black;" target="_blank" class="nav-link"><i
+                                        class="fa-brands fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+
+                </div>
+                <%}%>
 
         </div>
+
+
 
     </div>
 
