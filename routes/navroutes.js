@@ -4,8 +4,8 @@ const router = express.Router();
 const OurTeam = require('../models/team');
 const event = require('../models/event');
 
-router.get('/Gallery', (req, res) => {
-    res.render('Gallery.ejs');
+router.get('/gallery', (req, res) => {
+    res.render('gallery.ejs');
 })
 
 router.get('/OurTeam', async (req, res) => {

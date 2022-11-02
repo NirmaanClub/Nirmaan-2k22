@@ -12,19 +12,49 @@
     <link rel="stylesheet" href="/css/jquery-ui.css">
     <link rel="stylesheet" href="/css/jquery.fancybox.min.css">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/gallery.css">
 </head>
 
 <body>
     <div class="navbarposition" style="position:absolute; top :0px; width: 100%; background-color: black;">
         <%- include("partials/navbar.ejs") %>
     </div>
+    <div class="cont">
+        <div>
+            <h1>
+                NIRMAAN GALLERY
+            </h1>
+        </div>
+        <br>
+        <!-- all events -->
+        <% for(let i=0;i<3;i++){%>
+            <!-- for one event -->
+            <div class="event container">
+                <div class="">
+                    <br><br>
+                    <h2 class="text-center">First Event</h2>
+                    <br>
+                </div>
+                <hr>
+                <div class="d-flex flex-wrap justify-content-center">
+                    <!-- event images -->
+                    <% for(let i=0;i<9;i++){%>
+                        <div class="img-container" style="width:300px; height:250px; opacity:0.75">
+                            <img class="w-100 h-100"
+                                src="https://static.remove.bg/remove-bg-web/ea3c274e1b7f6fbbfe93fad8b2b13d7ef352f09c/assets/start-1abfb4fe2980eabfbbaaa4365a0692539f7cd2725f324f904565a9a744f8e214.jpg"
+                                alt="">
+                        </div>
+                        <%}%>
+                </div>
+            </div>
+            <%}%>
+    </div>
 
-
-    <div class="footerposition" style="position:absolute; bottom :0px; width: 100%; background-color: black;">
+    <div class="footerposition" style="position:absolute; width: 100%; background-color: black;">
         <%- include("partials/footer.ejs") %>
     </div>
 
-    <script src="/js/style.js"></script>
+    <!-- <script src="/js/style.js"></script> -->
 </body>
 
 </html>
