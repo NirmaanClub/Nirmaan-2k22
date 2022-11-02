@@ -4,7 +4,8 @@ body {
 }
 
 .container{
-    margin: 10px auto;
+    margin: 0px auto;
+    padding: 20px 0px;
 }
 .about {
     width: 40%;
@@ -30,7 +31,7 @@ body {
 .section {
     text-align: center;
     margin-top: 3rem;
-    color: rgb(0, 0, 0);
+    color: rgb(0,0,0);
 }
 
 .item{
