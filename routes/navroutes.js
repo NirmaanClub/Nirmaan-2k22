@@ -8,7 +8,7 @@ router.get('/gallery', (req, res) => {
     res.render('gallery.ejs');
 })
 
-router.get('/OurTeam', async (req, res) => {
+router.get('/ourteam', async (req, res) => {
     const TeamMembers = await OurTeam.find({});
     res.render('OurTeam.ejs', TeamMembers);
 })

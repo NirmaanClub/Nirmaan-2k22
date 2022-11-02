@@ -1,6 +1,6 @@
 .cont {
     min-height: 65.2vh;
-    width: 90%;
+    width: 80%;
     margin: 50px auto;
     display: flex;
     align-items: center;
@@ -108,6 +108,6 @@
 .hr{
     width: 80%;
     margin: 10px auto;
-    /* height: 1px; */
+    background-color: black;
     border: 1px solid black;
 }
