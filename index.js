@@ -1,11 +1,11 @@
 const express = require('express');
-const port = 80||process.env.port;
+const port = 5000||process.env.port;
 const app = express();
 const path = require('path');
 const navroutes = require('./routes/navroutes.js')
-
+require("dotenv").config({ path: "./config/config.env" });
 // conneting database;
-const connection = require('./DB/db.js')
+const connection = require('./config/db.js')
 connection();
 
 // path for static file
@@ -41,5 +41,5 @@ app.get('*',(req,res)=>{
     
 // listening the app 
 app.listen(port,()=>{
-    console.log('listening...')
+    console.log(`Started at port ${port}`);
 })

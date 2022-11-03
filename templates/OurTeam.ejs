@@ -24,7 +24,7 @@
     }
 
     body {
-        background:url('https://t3.ftcdn.net/jpg/03/78/72/64/240_F_378726428_WmVwNhEy9jyWGhcPs7TNhnpPz0yeRy7o.jpg') no-repeat center center/cover;
+        background: url('https://t3.ftcdn.net/jpg/03/78/72/64/240_F_378726428_WmVwNhEy9jyWGhcPs7TNhnpPz0yeRy7o.jpg') no-repeat center center/cover;
         background-attachment: fixed;
     }
 </style>
@@ -37,44 +37,62 @@
 
     <div class="sitewarp" style="width:100%;min-height:100vh;height: auto;background-color: rgb(0,0,0,0);">
         <div class="cont">
-            <div class="title">
-                <h1 style="color: rgb(0, 0, 0);">
-                    CORE-TEAM
-                </h1>
-            </div>
-            <div class="hr"></div>
-            <br>
-            <div class="conti">
-                <% for(let i=0;i<20;i++){%>
-                    <div class="profilecard">
-                        <div class="hover">
+            <% for(let team in teams){%>
+                <div class="title">
+                    <h1 style="color: rgb(0, 0, 0);">
+                        <br><br>
+                        <%=team%>
+                    </h1>
+                </div>
+                <div class="hr"></div>
+                <br>
+                <div class="conti">
+                    <% for(let i=0;i<teams[team].length;i++){%>
+                        <div class="profilecard">
+                            <div class="hover">
+
+                            </div>
+                            <div class="circle">
+                                <img src="<%=teams[team][i].image_link%>" alt="">
+                            </div>
+                            <div class="info">
+                                <span class="name">
+                                    <%=teams[team][i].name%>
+                                </span>
+                                <span class="pos">
+                                    <%=teams[team][i].title%>
+                                </span>
+                            </div>
+                            <div class="links">
+                                <ul class="nav justify-content-center" style="font-size:25px;">
+                                   
+                                    <% if(teams[team][i].instalink!=""){%>
+                                        <li class="nav-item"><a style="color:black ;" target="_blank"
+                                                href="<%=teams[team][i].instalink%>" class="nav-link"><i
+                                                    class="fa-brands fa-instagram"></i></a>
+                                        </li>
+                                        <%}%>
+                                    <% if(teams[team][i].facebooklink!=""){%>
+                                        <li class="nav-item"><a style="color:black ;" target="_blank"
+                                                href="<%=teams[team][i].facebooklink%>" class="nav-link"><i
+                                                    class="fa-brands fa-facebook-f"></i></a>
+                                        </li>
+                                        <%}%>
+                                    <% if(teams[team][i].linkedinlink!=""){%>
+                                        <li class="nav-item"><a style="color:black ;" target="_blank"
+                                                href="<%=teams[team][i].linkedinlink%>" class="nav-link"><i
+                                                    class="fa-brands fa-linkedin"></i></a>
+                                        </li>
+                                        <%}%>
+                                </ul>
+                            </div>
 
                         </div>
-                        <div class="circle">
-                            <img src="https://static.remove.bg/remove-bg-web/ea3c274e1b7f6fbbfe93fad8b2b13d7ef352f09c/assets/start-1abfb4fe2980eabfbbaaa4365a0692539f7cd2725f324f904565a9a744f8e214.jpg"
-                                alt="">
-                        </div>
-                        <div class="info">
-                            <span class="name">Lakshay Nailwal</span>
-                            <span class="pos">Web Head</span>
-                        </div>
-                        <div class="links">
-                            <ul class="nav justify-content-center" style="font-size:25px;">
-                                <li class="nav-item"><a style="color:black ;" target="_blank" href=""
-                                        class="nav-link"><i class="fa-brands fa-instagram"></i></a>
-                                </li>
-                                <li class="nav-item"><a style="color:black ;" target="_blank" href=""
-                                        class="nav-link"><i class="fa-brands fa-facebook-f"></i></a>
-                                </li>
-                                <li class="nav-item"><a href="" style="color: black;" target="_blank"
-                                        class="nav-link"><i class="fa-brands fa-linkedin"></i></a></li>
-                            </ul>
-                        </div>
+                        <%}%>
 
-                    </div>
-                    <%}%>
+                </div>
+                <%}%>
 
-            </div>
 
 
 

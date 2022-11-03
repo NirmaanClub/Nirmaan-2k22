@@ -35,10 +35,11 @@
 
 
 .profilecard .circle img {
-    width: 66%;
+    width: 150px;
     border-radius: 50%;
     border: 2px solid rgb(155, 155, 155);
-    height: 140px;
+    height: 150px;
+    object-fit: cover;
 }
 
 .info {
@@ -88,9 +89,9 @@
 
 .profilecard .links::after {
     content: "";
-    width: 100%;
+    width: 250%;
     height: 0;
-    border-radius: 50%;
+    /* border-radius: 50%; */
     background-color: yellow;
     position: absolute;
     bottom: 0;
