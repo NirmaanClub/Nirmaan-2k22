@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,20 +13,79 @@
     <link rel="stylesheet" href="/css/jquery-ui.css">
     <link rel="stylesheet" href="/css/jquery.fancybox.min.css">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/index.css">
 </head>
-
 <body>
-    <div class="navbarposition" style="position:absolute; top :0px; width: 100%; background-color: black;">
+    <div class="navbarposition" style="width: 100%; background-color: rgba(0, 0, 0, 1);">
         <%- include("partials/navbar.ejs") %>
     </div>
 
-    <h1>this is home page</h1>
+    <div class="conti">
+        <div class="info">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium dignissimos assumenda nobis aliquid aliquam nesciunt itaque voluptatibus blanditiis dicta, maiores a ipsam beatae ipsum exercitationem autem eius voluptates ratione incidunt modi, ab at! Natus quas quis necessitatibus, obcaecati est consequatur?</p>
+        </div>
+        <div class="image">
+            <img src="https://static.remove.bg/remove-bg-web/ea3c274e1b7f6fbbfe93fad8b2b13d7ef352f09c/assets/start-1abfb4fe2980eabfbbaaa4365a0692539f7cd2725f324f904565a9a744f8e214.jpg"
+                alt="">
+        </div>
+    </div>
 
-    <div class="footerposition" style="position:absolute; bottom :0px; width: 100%; background-color: black;">
+    <div class="container" id="about">
+                
+    </div>
+
+    <div class="mainevents">
+
+    </div>
+
+    <div class="container" id="fest">
+
+    </div>
+
+    <div class="upcomming-events">
+
+    </div>
+
+
+    <div class="footerposition" style="width: 100%; background-color: black;">
         <%- include("partials/footer.ejs") %>
     </div>
 
-    <script src="/js/style.js"></script>
+    <script>
+
+        let observer = new IntersectionObserver((entries) => {
+            entries.forEach((element) => {
+                if (element.isIntersecting) {
+                    element.target.firstElementChild.style.opacity = "1";
+                    if (window.innerWidth > 650) {
+                        element.target.firstElementChild.style.transform = "translateX(0px)";
+                    }
+                    else {
+                        element.target.firstElementChild.style.transform = "translateY(0px)";
+                    }
+                    element.target.firstElementChild.style.transition = "all 1s ease";
+                }
+                else {
+                    element.target.firstElementChild.style.opacity = "0";
+                    if (window.innerWidth > 650) {
+                        element.target.firstElementChild.style.transform = "translateX(-350px)";
+                    }
+                    else {
+                        element.target.firstElementChild.style.transform = "translateY(-100vh)";
+                    }
+                    element.target.firstElementChild.style.transition = "all 0.5s ease";
+
+
+                }
+            })
+        });
+
+        const item = document.getElementsByClassName('conti');
+        // item[0].parentElement.lastElementChild.lastElementChild
+        for (let i = 0; i < item.length; i++) {
+            observer.observe(item[0])
+        }
+    </script>
 </body>
 
 </html>
