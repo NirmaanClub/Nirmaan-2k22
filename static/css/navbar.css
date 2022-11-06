@@ -1,0 +1,66 @@
+.collapse {
+    position: absolute;
+    right: 50px;
+    width: 70%;
+  }
+
+  .navbar-brand {
+    margin: 0px 50px;
+  }
+
+  .navbar-dark .navbar-toggler {
+    border: 0
+  }
+
+  .line {
+    width: 20px;
+    height: 2px;
+    background-color: white;
+    margin-top: 3px;
+  }
+
+  .navbar-collapse {
+    justify-content: flex-end;
+  }
+
+  .navitem {
+    margin: 0px 5px;
+    border-radius: 0px;
+    transition: all 0s;
+  }
+
+  .navitem:hover {
+    background-color: yellow;
+    color: black !important;
+    border-radius: 10px;
+    transition: all 0s;
+  }
+
+  @media only screen and (max-width:992px) {
+    .collapse {
+      position: unset;
+    }
+
+    .navbar-brand {
+      margin: unset;
+    }
+    .navitem{
+      width: 25%;
+      text-align: center;
+    }
+    .navitem:hover {
+      background-color: yellow;
+      color: black !important;
+      border-radius: 10px;
+      transition: all 0s;
+    }
+  }
+
+  .navbar-brand img{
+    width: 100px;
+    height: 40px;
+  }
+
+  .navbar {
+    padding: 17px;
+  }

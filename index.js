@@ -1,5 +1,5 @@
 const express = require('express');
-const port = 5000||process.env.port;
+const port = 80||process.env.port;
 const app = express();
 const path = require('path');
 const navroutes = require('./routes/navroutes.js')
@@ -7,13 +7,6 @@ require("dotenv").config({ path: "./config/config.env" });
 // conneting database;
 const connection = require('./config/db.js')
 connection();
-
-// path for static file
-const staticPath = path.join(__dirname,'./static')
-
-// path for view file (templates)
-const templatePath = path.join(__dirname,'./templates')
-
 
 // setting of view engine
 app.set('views',"./templates")

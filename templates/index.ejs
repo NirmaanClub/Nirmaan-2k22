@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <link rel="icon" href="/images/NewLogo1.png">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,22 +17,31 @@
     <link rel="stylesheet" href="/css/index.css">
 </head>
 <body>
-    <div class="navbarposition" style="width: 100%; background-color: rgb(0, 0, 0)");>
+    <div class="navbarposition" style="width: 100%; background-color: rgb(0, 0, 0)" );>
         <%- include("partials/navbar.ejs") %>
     </div>
 
     <div class="conti">
         <div class="info">
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium dignissimos assumenda nobis aliquid aliquam nesciunt itaque voluptatibus blanditiis dicta, maiores a ipsam beatae ipsum exercitationem autem eius voluptates ratione incidunt modi, ab at! Natus quas quis necessitatibus, obcaecati est consequatur?</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium dignissimos assumenda nobis aliquid
+                aliquam nesciunt itaque voluptatibus blanditiis dicta, maiores a ipsam beatae ipsum exercitationem autem
+                eius voluptates ratione incidunt modi, ab at! Natus quas quis necessitatibus, obcaecati est consequatur?
+            </p>
+        </div>
+        <div class="title">
+            <h1>Nirmaan-Club</h1>
+            <span>IIT-Mandi</span>
         </div>
         <div class="image">
-            <img src="https://static.remove.bg/remove-bg-web/ea3c274e1b7f6fbbfe93fad8b2b13d7ef352f09c/assets/start-1abfb4fe2980eabfbbaaa4365a0692539f7cd2725f324f904565a9a744f8e214.jpg"
+            <img src="https://1.bp.blogspot.com/-5bXvcPUMuec/XtpDMQ0PkWI/AAAAAAAAACc/paGedng3likhcsVWCAb05Slbu4JAOC-TwCK4BGAsYHg/d/headerbanner2.jpg"
                 alt="">
         </div>
     </div>
 
     <div class="container" id="about">
-                
+        <div class="heading">
+            <span>What We Do Here?</span>
+        </div>
     </div>
 
     <div class="mainevents">
@@ -51,39 +61,7 @@
         <%- include("partials/footer.ejs") %>
     </div>
 
-    <script>
-
-        let observer = new IntersectionObserver((entries) => {
-            entries.forEach((element) => {
-                if (element.isIntersecting) {
-                    element.target.firstElementChild.style.opacity = "1";
-                    if (window.innerWidth > 650) {
-                        element.target.firstElementChild.style.transform = "translateX(0px)";
-                    }
-                    else {
-                        element.target.firstElementChild.style.transform = "translateY(0px)";
-                    }
-                    element.target.firstElementChild.style.transition = "all 1s ease";
-                }
-                else {
-                    element.target.firstElementChild.style.opacity = "0";
-                    if (window.innerWidth > 650) {
-                        element.target.firstElementChild.style.transform = "translateX(-350px)";
-                    }
-                    else {
-                        element.target.firstElementChild.style.transform = "translateY(-100vh)";
-                    }
-                    element.target.firstElementChild.style.transition = "all 0.5s ease";
-                }
-            })
-        });
-
-        const item = document.getElementsByClassName('conti');
-        // item[0].parentElement.lastElementChild.lastElementChild
-        for (let i = 0; i < item.length; i++) {
-            observer.observe(item[0])
-        }
-    </script>
+    <script src="/js/home.js"></script>
 </body>
 
 </html>

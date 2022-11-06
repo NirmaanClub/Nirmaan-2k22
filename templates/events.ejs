@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <link rel="icon" href="/images/NewLogo1.png">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,45 +17,46 @@
     <link rel="stylesheet" href="/css/events.css">
     <link rel="stylesheet" href="/css/style.css">
 </head>
-<style>
-    body {
-        background: url('https://t4.ftcdn.net/jpg/01/10/14/93/240_F_110149329_REv7wpM5M1ObcmS9sJhi1D2jOWa6jxM1.jpg') no-repeat center center/cover;
-        background-attachment: fixed;
-    }
-</style>
-
 <body>
-    <div class="navbarposition" style="background-color:black ;">
+    <div class="navbarposition" style="position: absolute;
+    width: 100%;
+    z-index: 1;;background-color:black ;">
         <%- include("partials/navbar.ejs") %>
     </div>
-    <div class="site-warp" style="width: 100% ;height:auto; background-color:rgb(0,0,0,0.3)">
+    <div class="site-warp" style="padding-bottom: 50px;width: 100% ;height:auto;">
+        <div class="titlebox" style="text-align: center;">
+            <h1>
+                NIRMAAN EVENTS
+            </h1>
+        </div>
         <div class="container">
             <% for(Event in event ){%>
-                <div class="item"><br>
+                <div class="item">
                     <h1 class="section">
-                        <br><br>
+                        <br>
                         <%=Event%>
 
                     </h1>
                     <br>
                     <div>
-                    <% for(let i=0;i<event[Event].length;i++){%>
-                        <div class="event">
-                            <div class="imgbx">
-                                <img src="<%=event[Event][i].image%>"
-                                    alt="">
-                            </div>
-                            <div class="about">
-                                <div class="title">
-                                    <h2><%=event[Event][i].name%></h2>
+                        <% for(let i=0;i<event[Event].length;i++){%>
+                            <div class="event">
+                                <div class="imgbx">
+                                    <img src="<%=event[Event][i].image%>" alt="">
                                 </div>
-                                <div class="info">
-                                    <%=event[Event][i].about%>
+                                <div class="about">
+                                    <div class="title">
+                                        <h2>
+                                            <%=event[Event][i].name%>
+                                        </h2>
+                                    </div>
+                                    <div class="info">
+                                        <%=event[Event][i].about%>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <%}%>    
-                        
+                            <%}%>
+
                     </div>
                 </div>
                 <%}%>
@@ -65,42 +67,8 @@
             <%- include("partials/footer.ejs") %>
         </div>
     </div>
-    <script>
 
-        let observer = new IntersectionObserver((entries) => {
-            entries.forEach((element) => {
-                if (element.isIntersecting) {
-                    element.target.parentElement.lastElementChild.style.opacity = "1";
-                    if (window.innerWidth > 850) {
-                        element.target.parentElement.lastElementChild.style.transform = "translateX(0px)";
-                    }
-                    else {
-                        element.target.parentElement.lastElementChild.style.transform = "translateY(-250px)";
-                    }
-                    element.target.parentElement.lastElementChild.style.transition = "all 1s ease";
-                }
-                else {
-                    element.target.parentElement.lastElementChild.style.opacity = "0";
-                    if (window.innerWidth > 850) {
-                        element.target.parentElement.lastElementChild.style.transform = "translateX(-350px)";
-                    }
-                    else {
-                        element.target.parentElement.lastElementChild.style.transform = "translateY(-550px)";
-                    }
-                    // element.target.parentElement.lastElementChild.style.transform = "translateX(-350px)";
-                    element.target.parentElement.lastElementChild.style.transition = "all 0.5s ease";
-
-
-                }
-            })
-        });
-
-        const item = document.getElementsByClassName('event');
-        // item[0].parentElement.lastElementChild.lastElementChild
-        for (let i = 0; i < item.length; i++) {
-            observer.observe(item[i].firstElementChild)
-        }
-    </script>
+<script src="/js/event.js"></script>
 </body>
 
 </html>

@@ -24,6 +24,7 @@ router.get('/ourteam', async (req, res) => {
         }
         teamMem[key] = arr;
     }
+    console.log(teamMem);
     let context =  {
         teams:teamMem
     }
