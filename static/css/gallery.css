@@ -1,19 +1,19 @@
 .cont {
     min-height: 65.2vh;
     width: 90%;
-    margin: 90px auto;
+    margin: 0px 90px auto;
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 
 h1 {
-    color: black;
+    color: rgb(255, 255, 255);
     font-weight: 100;
 }
 
 h2 {
-    color: black;
+    color: rgb(255, 255, 255);
 }
 
 .event::after {
@@ -32,8 +32,8 @@ hr {
 .img-container {
     border-radius: 0.75rem !important;
     cursor: pointer;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, .08), 0 0 6px rgba(0, 0, 0, .05);
-    transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
+    /* box-shadow: 0 6px 10px rgba(0, 0, 0, .08), 0 0 6px rgba(0, 0, 0, .05); */
+    transition: .3s ease;
     margin: 20px;
 
 }
@@ -45,6 +45,26 @@ hr {
 .img-container:hover {
     opacity: 1 !important;
     transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
     transition: all 0.8s ease ;
+}
+
+html ,body{
+    overflow-x: hidden;
+}
+
+.titlebox {
+    width: 125%;
+    height: 250px;
+    /* background-color: yellow; */
+    color: black;
+    transform: skew(0deg, -3deg) translateX(-101px);
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.titlebox h1{
+    transform: skew(-8deg,3deg);
+    margin-top: 100px;
+    margin-left: 200px;
 }

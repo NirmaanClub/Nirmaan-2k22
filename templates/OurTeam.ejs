@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <link rel="icon" href="/images/NewLogo1.png">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,25 +18,22 @@
 </head>
 
 <style>
-    .conti {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
 
-    body {
-        background: url('https://t3.ftcdn.net/jpg/03/78/72/64/240_F_378726428_WmVwNhEy9jyWGhcPs7TNhnpPz0yeRy7o.jpg') no-repeat center center/cover;
-        background-attachment: fixed;
-    }
 </style>
 
 <body>
-    <div class="navbarposition"
-        style="position: relative;top:0px; left:0px;right: 0px; width: 100%; background-color: black;">
+    <div class="navbarposition" style="position: absolute;z-index: 1; width: 100%; background-color: black;">
         <%- include("partials/navbar.ejs") %>
     </div>
 
-    <div class="sitewarp" style="width:100%;min-height:100vh;height: auto;background-color: rgb(0,0,0,0);">
+    <div class="titlebox" style="text-align: center;">
+        <h1>
+            NIRMAAN TEAM
+        </h1>
+    </div>
+
+    <div class="sitewarp"
+        style="padding-bottom:40px ;width:100%;min-height:100vh;height: auto;background-color: rgb(0,0,0,0);">
         <div class="cont">
             <% for(let team in teams){%>
                 <div class="title">
@@ -65,25 +63,26 @@
                             </div>
                             <div class="links">
                                 <ul class="nav justify-content-center" style="font-size:25px;">
-                                   
-                                    <% if(teams[team][i].instalink!=""){%>
+
+                                    <% if(teams[team][i].instalink!="" ){%>
                                         <li class="nav-item"><a style="color:black ;" target="_blank"
                                                 href="<%=teams[team][i].instalink%>" class="nav-link"><i
                                                     class="fa-brands fa-instagram"></i></a>
                                         </li>
                                         <%}%>
-                                    <% if(teams[team][i].facebooklink!=""){%>
-                                        <li class="nav-item"><a style="color:black ;" target="_blank"
-                                                href="<%=teams[team][i].facebooklink%>" class="nav-link"><i
-                                                    class="fa-brands fa-facebook-f"></i></a>
-                                        </li>
-                                        <%}%>
-                                    <% if(teams[team][i].linkedinlink!=""){%>
-                                        <li class="nav-item"><a style="color:black ;" target="_blank"
-                                                href="<%=teams[team][i].linkedinlink%>" class="nav-link"><i
-                                                    class="fa-brands fa-linkedin"></i></a>
-                                        </li>
-                                        <%}%>
+                                            <% if(teams[team][i].facebooklink!="" ){%>
+                                                <li class="nav-item"><a style="color:black ;" target="_blank"
+                                                        href="<%=teams[team][i].facebooklink%>" class="nav-link"><i
+                                                            class="fa-brands fa-facebook-f"></i></a>
+                                                </li>
+                                                <%}%>
+                                                    <% if(teams[team][i].linkedinlink!="" ){%>
+                                                        <li class="nav-item"><a style="color:black ;" target="_blank"
+                                                                href="<%=teams[team][i].linkedinlink%>"
+                                                                class="nav-link"><i
+                                                                    class="fa-brands fa-linkedin"></i></a>
+                                                        </li>
+                                                        <%}%>
                                 </ul>
                             </div>
 
@@ -102,11 +101,9 @@
 
 
     <div class="footerposition"
-        style="position: relative;bottom:0px; left:0px;right: 0px; width: 100%; background-color: black;">
+        style="position: absolute; width: 100%; background-color: black;">
         <%- include("partials/footer.ejs") %>
     </div>
-
-    <script src="/js/style.js"></script>
 </body>
 
 </html>
