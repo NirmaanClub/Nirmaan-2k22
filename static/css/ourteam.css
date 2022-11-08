@@ -135,9 +135,9 @@ body {
 .titlebox {
     width: 130%;
     height: 250px;
-    background-color: yellow;
-    color: black;
-    transform: skew(0deg, -3deg) translateX(-101px);
+    background-color: #0000006e;
+    color: white;
+    transform: skew(0deg, -4.5deg) translateX(-101px);
     z-index: -1;
     display: flex;
     justify-content: center;
@@ -145,8 +145,8 @@ body {
 }
 
 .titlebox h1 {
-    transform: skew(-8deg, 3deg);
-    color: black;
+    transform: skew(-8deg, 5deg);
+    color: white;
     margin-left: -240px;
     font-size: 3rem;
     margin-top: 100px;

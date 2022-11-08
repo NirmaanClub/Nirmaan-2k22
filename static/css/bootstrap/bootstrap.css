@@ -141,7 +141,7 @@ sup {
   top: -.5em; }
 
 a {
-  color: white;
+  color: rgb(0, 0, 0);
   text-decoration: none;
   background-color: transparent;
   -webkit-text-decoration-skip: objects; }

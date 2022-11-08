@@ -120,7 +120,7 @@ body {
 .titlebox {
     width: 130%;
     height: 250px;
-    background-color: yellow;
+    background-color: #dada1a;
     color: black;
     transform: skew(0deg, -3deg) translateX(-101px);
     z-index: -1;
