@@ -27,7 +27,6 @@ let observer = new IntersectionObserver((entries) => {
 });
 
 const item = document.getElementsByClassName('event');
-// item[0].parentElement.lastElementChild.lastElementChild
 for (let i = 0; i < item.length; i++) {
     observer.observe(item[i].firstElementChild)
 }

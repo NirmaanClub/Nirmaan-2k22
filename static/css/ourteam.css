@@ -134,10 +134,10 @@ body {
 
 .titlebox {
     width: 130%;
-    height: 250px;
+    height: 350px;
     background-color: #0000006e;
     color: white;
-    transform: skew(0deg, -4.5deg) translateX(-101px);
+    transform: skew(0deg, -4.5deg) translate(-101px,-100px);
     z-index: -1;
     display: flex;
     justify-content: center;

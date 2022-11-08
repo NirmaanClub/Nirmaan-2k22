@@ -18,13 +18,13 @@
 
 <style>
     body{
-        background: url('https://media.istockphoto.com/id/1336601481/photo/3d-rendering-of-infinity-symbol-road-in-adventure-route-concept.jpg?s=612x612&w=0&k=20&c=Nb8kmswDkUi5NwGw_rM_aTt-3Le6gZW5sFunPvjYUKM=') no-repeat center center/cover;
+        background: url('https://images.unsplash.com/photo-1527846099182-ae0369136c2a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80') no-repeat center center/cover;
         background-attachment: fixed;
     }
 </style>
 
 <body>
-    <div class="navbarposition" style="position: absolute;z-index: 1;width: 100%; background-color:#dada1a ;">
+    <div class="navbarposition" style="position: absolute;z-index: 1;width: 100%; ;">
         <%- include("partials/navbar.ejs") %>
     </div>
     <div class="cont">
@@ -36,7 +36,7 @@
         <!-- all events -->
         <% for(let i=0;i<3;i++){%>
             <!-- for one event -->
-            <div class="event container">
+            <div class="event contai">
                 <div class="">
                     <h2 class="text-center">First Event</h2>
                     <br>
@@ -44,7 +44,7 @@
                 <hr>
                 <div class="d-flex flex-wrap justify-content-center">
                     <!-- event images -->
-                    <% for(let i=0;i<9;i++){%>
+                    <% for(let i=0;i<8;i++){%>
                         <div class="img-container" style="width:300px; height:250px; ">
                             <img class="w-100 h-100"
                                 src="https://static.remove.bg/remove-bg-web/ea3c274e1b7f6fbbfe93fad8b2b13d7ef352f09c/assets/start-1abfb4fe2980eabfbbaaa4365a0692539f7cd2725f324f904565a9a744f8e214.jpg"
