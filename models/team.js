@@ -26,7 +26,9 @@ const TeamSchema = new mongoose.Schema({
     linkedinlink: {
         type: String,
     },
-
+    twitter:{
+        type:String
+    }
 });
 
 const TeamMembers = new mongoose.model("Ourteam",TeamSchema);

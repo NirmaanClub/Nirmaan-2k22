@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <link rel="icon" href="/images/NewLogo1.png">
+    <link rel="icon" href="/images/Picture.png">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,11 +18,13 @@
 </head>
 
 <style>
-
+.navitem {
+    color: white ;
+}
 </style>
 
 <body>
-    <div class="navbarposition" style="position: absolute;z-index: 1; width: 100%; background-color: black;">
+    <div class="navbarposition" style="position: absolute;z-index: 1; width: 100%; background-color: #0000006e;">
         <%- include("partials/navbar.ejs") %>
     </div>
 
@@ -37,7 +39,7 @@
         <div class="cont">
             <% for(let team in teams){%>
                 <div class="title">
-                    <h1 style="color: rgb(0, 0, 0);">
+                    <h1 style="color: black;">
                         <br><br>
                         <%=team%>
                     </h1>
@@ -67,23 +69,30 @@
                                     <% if(teams[team][i].instalink!="" ){%>
                                         <li class="nav-item"><a style="color:black ;" target="_blank"
                                                 href="<%=teams[team][i].instalink%>" class="nav-link"><i
-                                                    class="fa-brands fa-instagram"></i></a>
+                                                    class="fa fa-instagram"></i></a>
                                         </li>
                                         <%}%>
                                             <% if(teams[team][i].facebooklink!="" ){%>
                                                 <li class="nav-item"><a style="color:black ;" target="_blank"
                                                         href="<%=teams[team][i].facebooklink%>" class="nav-link"><i
-                                                            class="fa-brands fa-facebook-f"></i></a>
+                                                            class="fa fa-facebook-f"></i></a>
                                                 </li>
                                                 <%}%>
-                                                    <% if(teams[team][i].linkedinlink!="" ){%>
-                                                        <li class="nav-item"><a style="color:black ;" target="_blank"
-                                                                href="<%=teams[team][i].linkedinlink%>"
-                                                                class="nav-link"><i
-                                                                    class="fa-brands fa-linkedin"></i></a>
-                                                        </li>
-                                                        <%}%>
-                                </ul>
+                                                <% if(teams[team][i].linkedinlink!="" ){%>
+                                                    <li class="nav-item"><a style="color:black ;" target="_blank"
+                                                            href="<%=teams[team][i].linkedinlink%>"
+                                                            class="nav-link"><i
+                                                                class="fa fa-linkedin"></i></a>
+                                                    </li>
+                                                    <%}%>
+                                                <% if(teams[team][i].twitter!="" ){%>
+                                                    <li class="nav-item"><a style="color:black ;" target="_blank"
+                                                            href="<%=teams[team][i].twitter%>"
+                                                            class="nav-link"><i
+                                                                class="fa fa-twitter"></i></a>
+                                                    </li>
+                                                    <%}%>
+                                            </ul>
                             </div>
 
                         </div>

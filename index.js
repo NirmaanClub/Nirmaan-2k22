@@ -2,8 +2,11 @@ const express = require('express');
 const port = 80||process.env.port;
 const app = express();
 const path = require('path');
-const navroutes = require('./routes/navroutes.js')
 require("dotenv").config({ path: "./config/config.env" });
+
+// setting navigation routes
+const navroutes = require('./routes/navroutes.js');
+
 // conneting database;
 const connection = require('./config/db.js')
 connection();
@@ -11,7 +14,6 @@ connection();
 // setting of view engine
 app.set('views',"./templates")
 app.set("view engine", "ejs");
-
 
 // using  builtin middleware for serving static files
 app.use(express.static(__dirname + "/static"))

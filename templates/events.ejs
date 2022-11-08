@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <link rel="icon" href="/images/NewLogo1.png">
+    <link rel="icon" href="/images/Picture.png">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +20,7 @@
 <body>
     <div class="navbarposition" style="position: absolute;
     width: 100%;
-    z-index: 1;;background-color:black ;">
+    z-index: 1;; background:#dada1a;">
         <%- include("partials/navbar.ejs") %>
     </div>
     <div class="site-warp" style="padding-bottom: 50px;width: 100% ;height:auto;">
@@ -47,7 +47,7 @@
                                 <div class="about">
                                     <div class="title">
                                         <h2>
-                                            <%=event[Event][i].name%>
+                                            <%=event[Event][i].topic%>
                                         </h2>
                                     </div>
                                     <div class="info">
@@ -55,6 +55,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <br><br>
                             <%}%>
 
                     </div>
