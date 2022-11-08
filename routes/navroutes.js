@@ -54,6 +54,7 @@ router.get('/events', async (req, res) => {
                 let arr1 = []
                 if (rows[j].title == key) {
                     arr1['image'] = rows[j].image
+                    // console.log(rows[j].image)
                     arr1['about'] = rows[j].about
                     arr1['topic'] = rows[j].topic
                     arr.push(arr1)

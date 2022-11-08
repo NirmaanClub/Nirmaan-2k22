@@ -14,47 +14,105 @@
     <link rel="stylesheet" href="/css/jquery-ui.css">
     <link rel="stylesheet" href="/css/jquery.fancybox.min.css">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/index.css">
 </head>
+
+<style>
+    #about {
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        align-items: center;
+        height: auto;
+        width: 100%;
+        /* border: 2px solid yellow;/ */
+        background-color: black;
+        /* flex-wrap: wrap; */
+        margin: 10px 0px;
+    }
+
+    .sr-only {
+        color: black;
+    }
+
+    .card {
+        height: 500px;
+        width: 800px;
+        margin: 10px;
+        box-shadow: 2px 2px 10px grey;
+        border-radius: 10px;
+    }
+    .images::before{
+        content: "";
+        position: absolute;
+        top: 86px;
+        right: 0;
+        left: 0;
+        height: 100vh;
+        background-color: rgb(0,0,0,0.5);
+    }
+    .title{
+        z-index: 100000;
+    }
+</style>
+
 <body>
-    <div class="navbarposition" style="width: 100%; background-color: #dada1a";>
+    <div class="navbarposition" style="width: 100%; background-color: #dada1a" ;>
         <%- include("partials/navbar.ejs") %>
     </div>
 
     <div class="conti">
         <div class="info">
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium dignissimos assumenda nobis aliquid
-                aliquam nesciunt itaque voluptatibus blanditiis dicta, maiores a ipsam beatae ipsum exercitationem autem
-                eius voluptates ratione incidunt modi, ab at! Natus quas quis necessitatibus, obcaecati est consequatur?
+            <h2>ABOUT US</h2>
+            <!-- <br> -->
+            <p> Nirmaan Club is a Technical Club of IIT Mandi where someone can explore the beauty of civil engineering
+                and related domains beyond academics!!
+                <br>
+                The club believes to give students some practical insight into civil engineering, we organize several
+                events, workshop, expert talks,and site visits throughout the year to ongoing activities and construction sites such as
+                dams, bridges, major buildings, SPT sites and many more...
+                <br>
+                On the whole, Nirmaan Club is dedicated to nurturing technology and including students talent in civil
+                engineering via different activities.
             </p>
         </div>
         <div class="title">
             <h1>Nirmaan-Club</h1>
             <span>IIT-Mandi</span>
         </div>
-        <div class="image">
+        <div class="images">
             <img src="https://1.bp.blogspot.com/-5bXvcPUMuec/XtpDMQ0PkWI/AAAAAAAAACc/paGedng3likhcsVWCAb05Slbu4JAOC-TwCK4BGAsYHg/d/headerbanner2.jpg"
                 alt="">
         </div>
     </div>
 
-    <div class="container" id="about">
-        <div class="heading">
-            <span>What We Do Here?</span>
+    
+    <!-- <div class="" id="about">
+        <div class="contbox">
+            <div class="card">
+
+            </div>
         </div>
-    </div>
+    </div> -->
 
-    <div class="mainevents">
-
+    <!-- <div class="projects">
+        <div class="">
+            <h1 style="color:rgb(0, 0, 0);text-align: center;">
+                Club Project
+            </h1>
+        </div>
+        <img src="https://user-images.githubusercontent.com/111749567/200645842-a26f0a44-9200-4f4c-855c-4e36a66e0c83.jpeg" alt="">
+        <div class="infoproject"></div>
     </div>
 
     <div class="container" id="fest">
 
-    </div>
+    </div> -->
 
-    <div class="upcomming-events">
+    <!-- <div class="upcomming-events">
 
-    </div>
+    </div> -->
 
 
     <div class="footerposition" style="width: 100%; background-color: black;">

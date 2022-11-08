@@ -30,24 +30,32 @@
   }
 
   .navitem:hover {
-    background-color: yellow;
-    color: black !important;
-    border-radius: 10px;
-    transition: all 0s;
+    text-decoration: underline;
+    color: black;
   }
+
+
 
   @media only screen and (max-width:992px) {
     .collapse {
       position: unset;
     }
 
+    .navbar{
+      background-color: #dada1a;
+    }
+    .navitem{
+      color: black;
+    }
+
     .navbar-brand {
       margin: unset;
     }
     .navitem{
-      width: 25%;
+      width: 30%;
       text-align: center;
     }
+
     .navitem:hover {
       background-color: yellow;
       color: black !important;
@@ -60,7 +68,9 @@
     width: 100px;
     height: 60px;
   }
-/* 
-  .navbar {
-    padding: 17px;
-  } */
+
+  @media only  screen and (max-width:400px)  {
+    .title h1{
+      font-size: 20px;
+    }
+  }
