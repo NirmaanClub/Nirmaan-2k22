@@ -1,12 +1,50 @@
 const express = require('express');
 const router = express.Router();
 const OurTeam = require('../models/team');  //getting data through database
-// const event = require('../models/event');
+const fests = require('../models/fest.js');  //getting data through db
 const gallery = require('../models/gallery');  //getting gallery data through database
 
 router.get('/gallery', async (req, res) => {
     const galleryitem = await gallery.find({});
-    res.render('gallery.ejs');
+    let arr = {}
+    for (let i=0;i<galleryitem.length;i++){
+        arr[galleryitem[i].title] = ""
+    }
+    for(key in arr){
+        let arr1 = []
+        for(let j=0;j<galleryitem.length;j++){
+            if(key==galleryitem[j].title){
+                arr1.push({"title":key,"imglist":galleryitem[j].image.split(',')})
+            }
+        }
+        arr[key] = arr1;
+    }
+    console.log(arr.iojoads[0].imglist)
+    let context = {
+        gallery : arr
+    }
+    res.render('gallery.ejs',context);
+})
+
+router.get('/fest',async(req,res)=>{
+    const festitem = await fests.find({});
+    let fest = {};
+    for(let i=0;i<festitem.length;i++){
+        fest[festitem[i].title] = "";
+    }
+    for(key in fest){
+        let arr =[];
+        for(let j=0;j<festitem.length;j++){
+            if(key == festitem[j].title){
+                arr.push(festitem[j]);
+            }
+        }
+        fest[key] = arr;
+    }
+    let context = {
+        festdata:fest
+    }
+    res.render('fest.ejs',context);
 })
 
 router.get('/ourteam', async (req, res) => {
@@ -48,10 +86,12 @@ router.get('/events', async (req, res) => {
         for (let i = 0; i < rows.length; i++) {
             Events[rows[i].title] = ""
         }
+        // console.log(rows[3]._rawData);
         for (let key in Events) {
             let arr = [];
             for (let j = 0; j < rows.length; j++) {
                 let arr1 = []
+                console.log(rows[j]._rawData)
                 if (rows[j].title == key) {
                     arr1['image'] = rows[j].image
                     // console.log(rows[j].image)

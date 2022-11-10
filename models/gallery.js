@@ -5,7 +5,7 @@ const gallerySchema = mongoose.Schema({
         type:String,
         required:true
     },
-    imglink:{
+    image:{
         type:String,
         required:true
     }

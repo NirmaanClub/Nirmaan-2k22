@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const TeamSchema = new mongoose.Schema({
+const TeamSchema = mongoose.Schema({
     title:{
         type:String,
         required:true
@@ -31,6 +31,6 @@ const TeamSchema = new mongoose.Schema({
     }
 });
 
-const TeamMembers = new mongoose.model("Ourteam",TeamSchema);
+const TeamMembers = mongoose.model("Ourteam",TeamSchema);
 
 module.exports = TeamMembers;

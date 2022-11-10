@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" href="/images/Picture.png">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nirmaan-Club||Fest</title>
+    <!-- linking main styling file -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="/css/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="/css/jquery-ui.css">
+    <link rel="stylesheet" href="/css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="/css/fest.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="navbarposition" style="position: absolute;background-color: #dada1a;
+    width: 100%;
+    z-index: 1;; ">
+        <%- include("partials/navbar.ejs") %>
+    </div>
+    <div class="site-warp" style="padding-bottom: 50px;width: 100% ;height:auto;">
+        <div class="titlebox" style="text-align: center;">
+            <h1>
+                NIRMAAN FEST
+            </h1>
+        </div>
+        <div class="container">
+            <% for(fest in festdata ){%>
+                <div class="item">
+                    <h1 class="section">
+                        <br>
+                        <%=fest%>
+
+                    </h1>
+                    <br>
+                    <div>
+                        <% for(let i=0;i<festdata[fest].length;i++){%>
+                            <div class="event">
+                                <div class="imgbx">
+                                    <img src="<%=festdata[fest][i].image%>" alt="">
+                                </div>
+                                <div class="about">
+                                    <div class="title">
+                                        <h2>
+                                            <%=festdata[fest][i].name%>
+                                        </h2>
+                                    </div>
+                                    <div class="info">
+                                        <%=festdata[fest][i].about%>
+                                    </div>
+                                </div>
+                            </div>
+                            <br><br>
+                            <%}%>
+
+                    </div>
+                </div>
+                <%}%>
+
+
+        </div>
+        <div class="footerposition" style="position:absolute; width: 100%; background-color: black;">
+            <%- include("partials/footer.ejs") %>
+        </div>
+    </div>
+
+<script src="/js/event.js"></script>
+</body>
+
+</html>
