@@ -8,7 +8,7 @@ require("dotenv").config({ path: "./config/config.env" });
 const navroutes = require('./routes/navroutes.js');
 
 // conneting database;
-const connection = require('./config/db.js')
+const connection = require('./db.js')
 connection();
 
 // setting of view engine
