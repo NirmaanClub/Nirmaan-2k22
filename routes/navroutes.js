@@ -42,8 +42,9 @@ router.get('/eventname',async(req,res)=>{
     let eventname = req.query.eventname;
     let data = await getrows();
     let elem = data[eventname][num];
-    let winner = 0;
-    if(winner){
+    let winner=0
+    if(elem.winner){
+        // console.log('yes')
         winner = elem.winner.split(',');
     }
     let context = {
