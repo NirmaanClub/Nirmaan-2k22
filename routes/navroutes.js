@@ -42,11 +42,14 @@ router.get('/eventname',async(req,res)=>{
     let eventname = req.query.eventname;
     let data = await getrows();
     let elem = data[eventname][num];
-    let winners = elem.winner.split(',');
+    let winner = 0;
+    if(winner){
+        winner = elem.winner.split(',');
+    }
     let context = {
         name : req.query.event,
         eventdata:elem,
-        winnerlist:winners
+        winnerlist:winner
     }
     res.render('eventredirect.ejs',context)
 })
