@@ -17,10 +17,43 @@
     <link rel="stylesheet" href="/css/events.css">
     <link rel="stylesheet" href="/css/style.css">
 </head>
+<style>
+    .one:hover {
+        transform: translateY(0px);
+        transition: all 0.5s;
+    }
+
+    .one {
+        transform: translateY(10px);
+        transition: all 0.5s;
+    }
+
+    .boxes{
+        border-radius: 20px;
+    }
+    .boxes img{
+        border-radius: 20px 20px 0px 0px ;
+    }
+
+    .boxes {
+        min-height: 350px;
+        height: auto;
+    }
+    .boxes span{
+        font-size: 1.5rem;
+        color: black;     
+    }
+    .boxes{
+        text-align: center;
+        background: white;
+    }
+</style>
+
+
 <body>
-    <div class="navbarposition" style="position: absolute;background-color: #dada1a;
+    <div class="navbarposition" style="background-color: white;";
     width: 100%;
-    z-index: 1;; ">
+    z-index: 1;>
         <%- include("partials/navbar.ejs") %>
     </div>
     <div class="site-warp" style="padding-bottom: 50px;width: 100% ;height:auto;">
@@ -29,47 +62,39 @@
                 NIRMAAN EVENTS
             </h1>
         </div>
-        <div class="container">
-            <% for(Event in event ){%>
-                <div class="item">
-                    <h1 class="section">
-                        <br>
-                        <%=Event%>
 
-                    </h1>
-                    <br>
-                    <div>
-                        <% for(let i=0;i<event[Event].length;i++){%>
-                            <div class="event">
-                                <div class="imgbx">
-                                    <img src="<%=event[Event][i].image%>" alt="">
-                                </div>
-                                <div class="about">
-                                    <div class="title">
-                                        <h2>
-                                            <%=event[Event][i].topic%>
-                                        </h2>
-                                    </div>
-                                    <div class="info">
-                                        <%=event[Event][i].about%>
-                                    </div>
-                                </div>
-                            </div>
-                            <br><br>
-                            <%}%>
-
-                    </div>
+        <div class="contr">
+            <% for (let event in events){%>
+                <div class="titlename">
+                    <%=event%>
                 </div>
+                <hr>
+                <div class="eventname">
+                    <% for(let i=0;i<events[event].length;i++){%>
+                        <div class="one">
+                            <div class="boxes">
+                                <a href="/eventname?eventname=<%=event%>&event=<%= events[event][i].topic%>&num=<%= i %>"
+                                    target="_blank">
+                                    <img src="<%= events[event][i].image %>" alt="">
+                                </a>
+                                <span>
+                                    <%= events[event][i].topic%>
+                                </span>
+                            </div>
+                        </div>
+                        <%}%>
+                </div>
+
                 <%}%>
-
-
         </div>
-        <div class="footerposition" style="position:absolute; width: 100%; background-color: black;">
-            <%- include("partials/footer.ejs") %>
-        </div>
+
+    </div>
+    <div class="footerposition" style="position:absolute; width: 100%; background-color: black;">
+        <%- include("partials/footer.ejs") %>
+    </div>
     </div>
 
-<script src="/js/event.js"></script>
+    <script src="/js/event.js"></script>
 </body>
 
 </html>

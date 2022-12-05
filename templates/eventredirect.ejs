@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" href="/images/Picture.png">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nirmaan-Club||<%=name%>
+    </title>
+    <!-- linking main styling file -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="/css/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="/css/jquery-ui.css">
+    <link rel="stylesheet" href="/css/jquery.fancybox.min.css">
+    <!-- <link rel="stylesheet" href="/css/events.css"> -->
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<style>
+    body {
+        background: url('<%=eventdata.image%>') no-repeat center center/cover;
+        background-attachment: fixed;
+    }
+
+    .contr {
+        background-color: rgb(0, 0, 0, 0.6);
+        min-height: 75vh;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .title {
+        width: 100%;
+        text-align: center;
+        padding-top: 40px;
+    }
+
+    .title h1 {
+        font-size: 2.5rem;
+        text-transform: uppercase;
+    }
+
+    hr {
+        width: 80%;
+        border-top: 1px solid rgb(255, 255, 255) !important;
+    }
+
+    .info {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+
+    .colr span {
+        color: white;
+        width: 100%;
+    }
+
+    .colr {
+        padding: 10px 250px;
+    }
+
+    .winner {
+        display: flex;
+        flex-direction: column;
+    }
+    .price {
+        display: flex;
+        align-items: center;
+    }
+</style>
+
+<body>
+    <div class="navbarposition" style="background-color: #dada1a;
+    width: 100%;
+    z-index: 1;; ">
+        <%- include("partials/navbar.ejs") %>
+    </div>
+
+    <div class="contr">
+        <div class="title">
+            <h1>
+                <%=name%>
+            </h1>
+        </div>
+        <hr>
+
+        <div class="info">
+            <div class="colr about">
+                <span>
+                    <%=eventdata.about%>
+                </span>
+            </div>
+            <hr>
+
+            <% if(eventdata.price){%>
+                <div class="colr price">
+                    <h4>Price Worth: &nbsp <h5><%=eventdata.price%></h5>
+                    </h4>
+                </div>
+                <hr>
+                <%}%>
+
+                    <% if(winnerlist.length){%>
+                        <div class="colr winners">
+                            <h4>Winners:</h4>
+                            <% for( let i=0;i<winnerlist.length;i++){%>
+                                <span>
+                                    <%=i+1%>: <%= winnerlist[i]%>
+                                </span>
+                                <br>
+                                <%}%>
+                        </div>
+                        <%}%>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="footerposition" style="width: 100%; background-color: black;">
+        <%- include("partials/footer.ejs") %>
+    </div>
+</body>
+
+</html>

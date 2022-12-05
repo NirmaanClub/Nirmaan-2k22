@@ -29,20 +29,12 @@ body {
     height: 100vh;
 }
 
-.images img {
-    width: 100%;
-    height: 100vh;
-    z-index: -1;
-    position: absolute;
-    top: 80px;
-}
-
 @media only screen and (max-width:800px) {
     .info {
         width: 100% !important;
         font-size: 15px;
-        transform: translateY(315px) !important;
-        height: 311px;
+        /* transform: translateY(315px) !important;
+        height: 311px; */
     }
     .title {
         margin: 100px auto !important;
