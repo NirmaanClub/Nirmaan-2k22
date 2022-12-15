@@ -47,26 +47,47 @@
         text-align: center;
         background: white;
     }
+    .navitem{
+        color:white;
+    }
+
+    .entry{
+        background: url('https://img.freepik.com/free-photo/abstract-smoke-wallpaper-background-desktop_53876-133383.jpg?w=996&t=st=1671134915~exp=1671135515~hmac=26f3db27da9aefd1b4b94c32627033672e6441db3668afee5c543aeef1479571')no-repeat center center/cover;
+        background-attachment: fixed;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .titled{
+        color: white;
+        font-size: 8rem;
+    }
+
 </style>
 
 
 <body>
-    <div class="navbarposition" style="background-color: white;";
+    <div class="navbarposition" style="background-image: linear-gradient(to left, black,white);";
     width: 100%;
     z-index: 1;>
         <%- include("partials/navbar.ejs") %>
     </div>
-    <div class="site-warp" style="padding-bottom: 50px;width: 100% ;height:auto;">
-        <div class="titlebox" style="text-align: center;">
-            <h1>
-                NIRMAAN EVENTS
-            </h1>
+
+    <div class="entry">
+        <div class="titled">
+            NIRMAAN-EVENTS
         </div>
+    </div>
+    <br><br>
+    <div class="site-warp" style="padding-bottom: 50px;width: 100% ;height:auto;">
 
         <div class="contr">
             <% for (let event in events){%>
                 <div class="titlename">
                     <%=event%>
+                    
                 </div>
                 <hr>
                 <div class="eventname">
@@ -84,8 +105,9 @@
                         </div>
                         <%}%>
                 </div>
-
+                <br><br>
                 <%}%>
+                
         </div>
 
     </div>

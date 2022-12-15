@@ -15,121 +15,181 @@
     <link rel="stylesheet" href="/css/jquery.fancybox.min.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/css/index.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <!-- <link rel="stylesheet" href="/css/index.css"> -->
 </head>
-
 <style>
-    #about {
-        display: flex;
-        flex-direction: column;
-        /* justify-content: center; */
-        align-items: center;
-        height: auto;
-        width: 100%;
-        /* border: 2px solid yellow;/ */
-        background-color: black;
-        /* flex-wrap: wrap; */
-        margin: 10px 0px;
+    #video {
+        position: absolute;
+        z-index: -10;
+        object-fit: cover;
+        left: 0;
+        right: 0;
+        overflow: hidden;
     }
 
-    .sr-only {
+    #video video {
+        width: 100%;
+        object-fit: cover;
+        height: 575px;
+    }
+
+    .title {
+        width: 100%;
+        z-index: 1;
+        text-align: center;
+
+    }
+
+    .title h1 {
+        color: rgb(255, 255, 255);
+        font-size: 7rem;
+        height: 575px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    h2,
+    p {
         color: black;
     }
 
-    .card {
-        height: 500px;
-        width: 800px;
-        margin: 10px;
-        box-shadow: 2px 2px 10px grey;
-        border-radius: 10px;
+
+    #info p {
+        font-size: 17.5px;
     }
-    .conti{
-        background-color: rgb(0,0,0,0.5);
+
+    #info {
+        width: 100%;
+        margin: 50px auto;
+        padding: 20px;
+        text-align: center;
     }
-    .conti::before{
-        content: "";
-        position: absolute;
-        top: 86px;
-        right: 0;
-        left: 0;
-        height: 100vh;
-        background: url('https://1.bp.blogspot.com/-5bXvcPUMuec/XtpDMQ0PkWI/AAAAAAAAACc/paGedng3likhcsVWCAb05Slbu4JAOC-TwCK4BGAsYHg/d/headerbanner2.jpg') no-repeat center center/cover;
+
+    .upcomming {
+        text-align: center;
+        margin: 50px auto;
+        width: 100%;
+        padding: 20px;
     }
-    .title{
-        z-index: 100000;
+
+    .upcomming .card {
+        width: 250px;
+        margin: 20px;
+        border-radius: 20px;
+        min-height: 300px;
+        box-shadow: 0px 0px 31px -8px grey;
     }
-    .conti::after{
-        content: "";
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        height: 100vh;
-        top: 86px;
-        background-color: rgb(0,0,0,0.5);
+
+    .card img {
+        border-radius: 20px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .card span {
+        color: black;
+        font-weight: 600;
+    }
+
+    .card .about {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    footer p {
+        color: white;
+    }
+    h1,h2,h3,h4,h5{
+        color: black;
+    }
+
+    .section img{
+        width:300px;
+        height: 180px;
     }
 </style>
 
 <body>
-    <div class="navbarposition" style="width: 100%; background-color: yellow;">
+    <div class="navbarposition" style="background-image: linear-gradient(to left, black,white);" ; width: 100%; z-index:
+        1;>
         <%- include("partials/navbar.ejs") %>
     </div>
 
-    <div class="conti">
-        <div class="info">
-            <h2>ABOUT US</h2>
-            <p> Nirmaan Club is a Technical Club of IIT Mandi where someone can explore the beauty of civil engineering
-                and related domains beyond academics!!
-                <br>
-                The club believes to give students some practical insight into civil engineering, we organize several
-                events, workshop, expert talks,and site visits throughout the year to ongoing activities and construction sites such as
-                dams, bridges, major buildings, SPT sites and many more...
-                <br>
-                On the whole, Nirmaan Club is dedicated to nurturing technology and including students talent in civil
-                engineering via different activities.
-            </p>
-        </div>
-        <div class="title">
-            <h1>Nirmaan-Club</h1>
-            <span>IIT-Mandi</span>
-        </div>
-        <!-- <div class="images">
-        </div> -->
+    <div id="video">
+        <video src="/images/mainbg.mp4" loop muted autoplay></video>
     </div>
 
-    
-    <!-- <div class="" id="about">
-        <div class="contbox">
-            <div class="card">
+    <dic class="title">
+        <h1>Nirmaan Club</h1>
+        </div>
+
+        <div class="container">
+            <div id="info">
+                <h2>ABOUT US</h2>
+                <br>
+                <p> Nirmaan Club is a Technical Club of IIT Mandi where someone can explore the beauty of civil
+                    engineering
+                    and related domains beyond academics!!
+                    <br><br>
+                    The club believes to give students some practical insight into civil engineering, we organize
+                    several
+                    events, workshop, expert talks,and site visits throughout the year to ongoing activities and
+                    construction sites such as
+                    dams, bridges, major buildings, SPT sites and many more...
+                    <br>
+                    <br>
+                    On the whole, Nirmaan Club is dedicated to nurturing technology and including students talent in
+                    civil
+                    engineering via different activities.
+                </p>
+            </div>
+
+            <div class=" upcomming">
+                <h2>UPCOMING EVENTS</h2>
+                <div class="section">
+                    <%if(events.length> 0){%>
+                        <% for (let i=0;i<events[''].length;i++){%>
+                            <div class="card">
+                                <img src="<%=events[''][i].image%>" alt="">
+                                <br>
+                                <div class="about">
+                                    <span class="title">
+                                        <%=events[''][i].topic %>
+                                    </span>
+                                    <span class="venue">
+                                        <%=events[''][i].venue %>
+                                    </span>
+                                    <span class="date"><i class='far fa-calendar-alt'></i>:<%=events[''][i].date %>
+                                            </span>
+                                    <span class="time"><i class='far fa-clock'></i>:<%=events[''][i].time %></span>
+                                </div>
+                            </div>
+                            <%}%>
+                                <%} else{%>
+                                    <img src="/images/coming.png" alt="">
+                                    <%}%>
+                </div>
 
             </div>
         </div>
-    </div> -->
 
-    <!-- <div class="projects">
-        <div class="">
-            <h1 style="color:rgb(0, 0, 0);text-align: center;">
-                Club Project
-            </h1>
+
+        <div class="footerposition" style="width: 100%; background-color: black; z-index: 1;">
+            <%- include("partials/footer.ejs") %>
         </div>
-        <img src="https://user-images.githubusercontent.com/111749567/200645842-a26f0a44-9200-4f4c-855c-4e36a66e0c83.jpeg" alt="">
-        <div class="infoproject"></div>
-    </div>
 
-    <div class="container" id="fest">
-
-    </div> -->
-
-    <!-- <div class="upcomming-events">
-
-    </div> -->
-
-
-    <div class="footerposition" style="width: 100%; background-color: black;">
-        <%- include("partials/footer.ejs") %>
-    </div>
-
-    <script src="/js/home.js"></script>
+        <script src="/js/home.js"></script>
 </body>
 
 </html>

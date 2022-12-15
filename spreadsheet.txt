@@ -1,0 +1,9 @@
+for upcommig events 
+1. you have to specify that it comes under up, in the under column.
+2. you have to leave (title,about,price,winners) empty.
+
+
+for events page
+1. you have to leave (date,time,venue) empty.
+2. details like price winners are optional.
+3. you have to specify that it comes under event, in the under column.

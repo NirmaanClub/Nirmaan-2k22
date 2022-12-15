@@ -17,10 +17,11 @@
 </head>
 
 <style>
-    body{
-        background: url('https://images.pexels.com/photos/1323712/pexels-photo-1323712.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center/cover;
-        background-attachment: fixed;
-    }
+    /* body{ */
+        /* background: url('https://images.pexels.com/photos/1323712/pexels-photo-1323712.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center/cover; */
+        /* background-image: linear-gradient(to right, black,white,black); */
+        /* background-attachment: fixed; */
+    /* } */
     .contai{
         width: 100%;
     }
@@ -28,7 +29,7 @@
         color: black;
     }
     .imageon{
-        width: 500px;
+        width: 300px;
         margin: 20px;
         box-shadow: 1px 1px 10px 2px grey;
         border-radius: 20px;
@@ -37,7 +38,7 @@
     }
     .imageon img{
         width: 100%;
-        height: 400px;
+        height: 250px;
         border-radius: 20px;
     }
 
@@ -54,27 +55,43 @@
             font-size: 25px !important;
         }
     }
+
+    .entry{
+        background: url('https://img.freepik.com/free-vector/gradient-geometric-shapes-dark-background_52683-33027.jpg?w=996&t=st=1671135299~exp=1671135899~hmac=b24c47e3e2a47fd8e243c4617dab33094fe445c29d0654aae91a55f044f743b2')no-repeat center center/cover;
+        background-attachment: fixed;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .titled{
+        color: white;
+        font-size: 8rem;
+    }
 </style>
 
 <body>
-    <div class="navbarposition" style="width: 100%; ;">
+    <div class="navbarposition" style="background-image: linear-gradient(to left, black,white);";
+    width: 100%;
+    z-index: 1;>
         <%- include("partials/navbar.ejs") %>
     </div>
-    <br>
-    <div class="cont">
-        <div class="titlebox" style="text-align: center;">
-            <h1>
-                NIRMAAN GALLERY
-            </h1>
+    <div class="entry">
+        <div class="titled">
+            NIRMAAN-GALLERY
         </div>
-        <br>
+    </div>
+    <br><br><br>
+
+    <div class="cont">
         <!-- all events -->
         <% for(let key in gallery){%>
             <!-- for one event -->
+            <br>
             <div class="event contai">
                 <div class="">
                     <h2 class="text-center"><%=key%></h2>
-                    <br>
                 </div>
                 <hr>
                 <div class="d-flex flex-wrap justify-content-center">
@@ -87,7 +104,6 @@
                         </div>
                         <%}%>
                 </div>
-                <br>
             </div>
             <%}%>
     </div>

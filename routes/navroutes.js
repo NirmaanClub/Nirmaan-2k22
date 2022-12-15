@@ -32,7 +32,7 @@ router.get('/ourteam', async (req, res) => {
 router.get('/events', async (req, res) => {
     let data = await getrows();
     let context = {
-        events: data
+        events: data.events
     }
     res.render('events.ejs', context);
 })
