@@ -102,61 +102,14 @@ body {
 }
 
 
-body {
+/* body {
     background: url('https://img.freepik.com/free-vector/network-mesh-wire-digital-technology-background_1017-27428.jpg?w=1060&t=st=1670245802~exp=1670246402~hmac=89d3db866a6363a804a8de32eab29af1de93791e3d3299c2af03cf66ffc68586') no-repeat center center/cover;
     background-attachment: fixed;
-}
+} */
 
 html ,body{
     overflow-x: hidden;
 }
-
-html,
-body {
-    overflow-x: hidden;
-}
-
-.titlebox {
-    width: 100%;
-    height: 100px;
-    /* background-color: #dada1a; */
-    color: black;
-    /* transform: skew(0deg, -3deg) translateX(-101px); */
-    /* z-index: -1; */
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
-}
-
-.titlebox h1 {
-    /* transform: skew(-8deg, 3deg); */
-    color: black;
-    /* margin-left: -240px; */
-    font-size: 3rem;
-    margin-top: 50px;
-    font-weight: bold;
-}
-
-.title {
-    text-transform: uppercase;
-    font-size: 2rem;
-}
-
-/* @media only screen and (max-width:650px) {
-    .titlebox {
-        width: 150% !important;
-    }
-
-    .titlebox h1 {
-        font-size: 35px !important;
-        margin:100px auto 0px auto !important    
-    }
-
-    .title h1 {
-        font-size: 23px;
-
-    }
-} */
 
 h1 {
     color: black;
@@ -190,7 +143,7 @@ h2 {
 }
 
 .one {
-    width: 450px;
+    width: 400px;
 }
 
 .titlename {
@@ -198,7 +151,6 @@ h2 {
     font-size: 3rem;
     text-align: center;
     color: black;
-    font-weight: bold;
 }
 
 .imagebx {

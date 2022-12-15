@@ -4,6 +4,8 @@ const app = express();
 const path = require('path');
 require("dotenv").config({ path: "./config/config.env" });
 
+const getrows = require('./readsheet.js');
+
 // setting navigation routes
 const navroutes = require('./routes/navroutes.js');
 
@@ -24,9 +26,14 @@ app.use(express.static(__dirname + "/static"))
 // setting routes for navbar
 app.use('/',navroutes)
 
-app.get('/',(req,res)=>{
+app.get('/',async(req,res)=>{
     // adding data dynamically to page
-    res.render('index.ejs');
+    let data = await getrows();
+    let context = {
+        events: data.upevents
+    }
+    console.log(data.upevents)
+    res.render('index.ejs',context);
 })
 
 // for invalid req

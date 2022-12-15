@@ -11,14 +11,20 @@ const getrows = async () => {
     let sheet = doc.sheetsByIndex[0];
     let rows = await sheet.getRows();
     let Events = {};
+    let UpEvents = {};
     for (let i = 0; i < rows.length; i++) {
-        Events[rows[i].title] = ""
+        
+        if(rows[i].under == 'event'){
+            Events[rows[i].title] = ""
+        }
+        else if(rows[i].under == 'up'){
+            UpEvents[rows[i].title] = ""
+        }
     }
-    // console.log(rows[3]._rawData);
     for (let key in Events) {
         let arr = [];
         for (let j = 0; j < rows.length; j++) {
-            let arr1 = []
+            let arr1 = [];
             if (rows[j].title == key) {
                 arr1['image'] = rows[j].image
                 // console.log(rows[j].image)
@@ -31,7 +37,22 @@ const getrows = async () => {
         }
         Events[key] = arr;
     }
-    return Events;
+    for (let key in UpEvents) {
+        let arr2 = [];
+        for (let j = 0; j < rows.length; j++) {
+            let arr3 = [];
+            if (rows[j].title == key) {
+                arr3['image'] = rows[j].image
+                arr3['topic'] = rows[j].topic
+                arr3['date'] = rows[j].date
+                arr3['time'] = rows[j].time
+                arr3['venue'] = rows[j].venue
+                arr2.push(arr3)
+            }
+        }
+        UpEvents[key] = arr2;
+    }
+    return {'events':Events,'upevents':UpEvents};
 }
 
 module.exports = getrows;

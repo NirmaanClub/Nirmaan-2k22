@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="/css/navbar.css">
 <style>
-  .navitem  {
+  .navitem {
     text-transform: uppercase;
   }
 </style>
@@ -8,18 +8,38 @@
   <a class="navbar-brand" href="/"><img src="/images/logo.png" alt="Nirmaan-Logo"></a>
   <div class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
     aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
+    <div id="line">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+
   </div>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+  <div class="collapse navbar-collapse" id="call">
     <div class="navbar-nav">
       <a class=" navitem  nav-link" href="/">Home </a>
-      <a class=" navitem nav-link" href="/">About Us</a>
+      <a class=" navitem nav-link" href="/#info">About Us</a>
       <a class=" navitem nav-link" href="/events">Activities</a>
       <a class=" navitem nav-link" href="/gallery">Gallery</a>
-      <a class=" navitem nav-link" href="/fest">Fest&nbsp;&nbsp;</a>
+      <!-- <a class=" navitem nav-link" href="/fest">Fest&nbsp;&nbsp;</a> -->
       <a class=" navitem nav-link" href="/ourteam">OurTeam</a>
     </div>
   </div>
 </nav>
+
+<script>
+  let toggler = document.getElementById('line');
+  let call = document.getElementById('call');
+  let flag = true;
+  toggler.addEventListener('click',()=>{
+    console.log('click')
+    if(flag){
+      call.style.display = 'block';
+      flag = false;
+    }
+    else{
+      call.style.display = 'none';
+      flag = true;
+    }
+  })
+</script>
