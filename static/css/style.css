@@ -2,6 +2,10 @@
 *{
   scroll-behavior: smooth;
 }
+
+.titled{
+  text-align: center;
+}
 body {
   scroll-behavior: smooth;
   line-height: 1.7;

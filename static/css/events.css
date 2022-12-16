@@ -7,7 +7,7 @@ body {
     margin: 0px auto;
     padding-bottom: 50px;
 }
-.about {
+/* .about {
     width: 40%;
     height: 500px;
     display: flex;
@@ -18,15 +18,15 @@ body {
     color: rgb(255, 255, 255);
     transform: translateX(-350px);
     opacity: 0;
-}
+} */
 
-.title {
+/* .title {
     margin: 100px 0px 10px 0px;
 }
 
 .title h2{
     color: rgb(255, 255, 255);
-}
+} */
 
 .section {
     text-align: center;
@@ -74,7 +74,7 @@ body {
     }
 
 
-    .about {
+    /* .about {
         width: 75vw !important;
         min-height: 300px !important;
         height: auto;
@@ -86,9 +86,9 @@ body {
         transform: translateX(0px);
         transform: translateY(-500px);
         opacity: 0;
-    }
+    } */
 
-    .title {
+    /* .title {
 
         margin-top: 10px !important;
         margin-bottom: 5px !important;
@@ -97,7 +97,7 @@ body {
     .title h2{
         color: white;
         font-size: 1.2rem;
-    }
+    } */
 
 }
 
@@ -147,7 +147,6 @@ h2 {
 }
 
 .titlename {
-    /* margin: 100px auto 0px auto; */
     font-size: 3rem;
     text-align: center;
     color: black;
@@ -161,4 +160,84 @@ hr {
     width: 70%;
     border-top: 1px solid black !important;
     margin: auto;
+}
+
+
+.one:hover {
+    transform: translateY(0px);
+    transition: all 0.5s;
+}
+
+.one {
+    transform: translateY(10px);
+    transition: all 0.5s;
+}
+
+.boxes {
+    border-radius: 20px;
+}
+
+.boxes img {
+    border-radius: 20px 20px 0px 0px;
+}
+
+.boxes {
+    min-height: 350px;
+    height: auto;
+}
+
+.boxes span {
+    font-size: 1.5rem;
+    color: black;
+}
+
+.boxes {
+    text-align: center;
+    background: white;
+}
+
+.navitem {
+    color: white;
+}
+
+.entry {
+    background: url('https://img.freepik.com/free-photo/abstract-smoke-wallpaper-background-desktop_53876-133383.jpg?w=996&t=st=1671134915~exp=1671135515~hmac=26f3db27da9aefd1b4b94c32627033672e6441db3668afee5c543aeef1479571')no-repeat center center/cover;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.titled {
+    color: white;
+    font-size: 8rem;
+}
+
+.navbarposition {
+    background-image: linear-gradient(to left, black, white);
+    width: 100%;
+    z-index: 1;
+}
+
+.footerposition {
+    width: 100%; 
+    background-color: black;
+}
+
+.site-warp {
+    padding-bottom: 50px;
+    width: 100%;
+    height: auto;
+}
+
+@media screen and (max-width:600px) {
+    .titled {
+        font-size: 3.8rem !important;
+    }
+
+    .title h1 {
+        font-size: 25px !important;
+    }
 }

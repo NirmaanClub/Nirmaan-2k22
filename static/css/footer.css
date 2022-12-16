@@ -1,0 +1,11 @@
+.nav a {
+    color: white;
+}
+
+.nav a:hover {
+    color: yellow;
+}
+
+footer{
+    color: white;
+}

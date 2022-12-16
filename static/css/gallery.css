@@ -6,6 +6,7 @@
     flex-direction: column;
 }
 
+/* 
 h1 {
     color: rgb(255, 255, 255);
     font-weight: 100;
@@ -13,7 +14,7 @@ h1 {
 
 h2 {
     color: rgb(255, 255, 255);
-}
+} */
 
 .event::after {
     content: "";
@@ -44,37 +45,85 @@ hr {
 .img-container:hover {
     opacity: 1 !important;
     transform: scale(1.05);
-    transition: all 0.8s ease ;
+    transition: all 0.8s ease;
 }
 
-html ,body{
+html,
+body {
     overflow-x: hidden;
 }
 
-.navitem {
-    color: BLACK ;
-}
-.titlebox {
+/* body{ */
+/* background: url('https://images.pexels.com/photos/1323712/pexels-photo-1323712.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center/cover; */
+/* background-image: linear-gradient(to right, black,white,black); */
+/* background-attachment: fixed; */
+/* } */
+.contai {
     width: 100%;
-    /* height: 100px; */
-    /* background-color: #dada1a; */
-    /* color: black; */
-    /* transform: skew(0deg, -3deg) translateX(-101px); */
-    /* z-index: -1; */
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
 }
 
-.titlebox h1 {
-    /* transform: skew(-8deg, 3deg); */
+h2 {
     color: black;
-    /* margin-left: -240px; */
-    font-size: 3rem;
-    font-weight: bold;
 }
 
-.title {
-    text-transform: uppercase;
-    font-size: 2rem;
+.imageon {
+    width: 300px;
+    margin: 20px;
+    box-shadow: 1px 1px 10px 2px grey;
+    border-radius: 20px;
+    transform: translateY(10px);
+    transition: all 0.5s;
+}
+
+.imageon img {
+    width: 100%;
+    height: 250px;
+    border-radius: 20px;
+}
+
+.imageon:hover {
+    transform: translateY(0px);
+    transition: all 0.5s;
+}
+
+@media only screen and (max-width:500px) {
+    .imageon img {
+        height: unset !important;
+    }
+}
+
+.entry {
+    background: url('https://img.freepik.com/free-vector/gradient-geometric-shapes-dark-background_52683-33027.jpg?w=996&t=st=1671135299~exp=1671135899~hmac=b24c47e3e2a47fd8e243c4617dab33094fe445c29d0654aae91a55f044f743b2')no-repeat center center/cover;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.titled {
+    color: white;
+    font-size: 8rem;
+}
+
+.navbarposition {
+    background-image: linear-gradient(to left, black, white);
+    width: 100%;
+    z-index: 1;
+}
+
+.footerposition {
+    width: 100%;
+    background-color: black;
+}
+
+@media screen and (max-width:600px) {
+    .titled {
+        font-size: 3.8rem !important;
+    }
+
+    .title h1 {
+        font-size: 25px !important;
+    }
 }

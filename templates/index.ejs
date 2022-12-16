@@ -11,130 +11,31 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="fonts/icomoon/style.css">
     <link rel="stylesheet" href="/css/bootstrap/bootstrap.css">
-    <link rel="stylesheet" href="/css/jquery-ui.css">
-    <link rel="stylesheet" href="/css/jquery.fancybox.min.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-    <!-- <link rel="stylesheet" href="/css/index.css"> -->
+    <link rel="stylesheet" href="/css/index.css">
 </head>
-<style>
-    #video {
-        position: absolute;
-        z-index: -10;
-        object-fit: cover;
-        left: 0;
-        right: 0;
-        overflow: hidden;
-    }
-
-    #video video {
-        width: 100%;
-        object-fit: cover;
-        height: 575px;
-    }
-
-    .title {
-        width: 100%;
-        z-index: 1;
-        text-align: center;
-
-    }
-
-    .title h1 {
-        color: rgb(255, 255, 255);
-        font-size: 7rem;
-        height: 575px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-    }
-
-    h2,
-    p {
-        color: black;
-    }
-
-
-    #info p {
-        font-size: 17.5px;
-    }
-
-    #info {
-        width: 100%;
-        margin: 50px auto;
-        padding: 20px;
-        text-align: center;
-    }
-
-    .upcomming {
-        text-align: center;
-        margin: 50px auto;
-        width: 100%;
-        padding: 20px;
-    }
-
-    .upcomming .card {
-        width: 250px;
-        margin: 20px;
-        border-radius: 20px;
-        min-height: 300px;
-        box-shadow: 0px 0px 31px -8px grey;
-    }
-
-    .card img {
-        border-radius: 20px;
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-    }
-
-    .section {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .card span {
-        color: black;
-        font-weight: 600;
-    }
-
-    .card .about {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    footer p {
-        color: white;
-    }
-    h1,h2,h3,h4,h5{
-        color: black;
-    }
-
-    .section img{
-        width:300px;
-        height: 180px;
-    }
-</style>
 
 <body>
-    <div class="navbarposition" style="background-image: linear-gradient(to left, black,white);" ; width: 100%; z-index:
-        1;>
+    <!-- navbar section -->
+    <div class="navbarposition">
         <%- include("partials/navbar.ejs") %>
     </div>
 
+    <!-- setting video background -->
     <div id="video">
         <video src="/images/mainbg.mp4" loop muted autoplay></video>
     </div>
 
+    <!-- title overlay -->
     <dic class="title">
         <h1>Nirmaan Club</h1>
         </div>
-
+        <br>
         <div class="container">
+            <br>
+            <!-- about us section -->
             <div id="info">
                 <h2>ABOUT US</h2>
                 <br>
@@ -154,7 +55,7 @@
                     engineering via different activities.
                 </p>
             </div>
-
+            <!-- upcoming events section -->
             <div class=" upcomming">
                 <h2>UPCOMING EVENTS</h2>
                 <div class="section">
@@ -171,7 +72,7 @@
                                         <%=events[''][i].venue %>
                                     </span>
                                     <span class="date"><i class='far fa-calendar-alt'></i>:<%=events[''][i].date %>
-                                            </span>
+                                    </span>
                                     <span class="time"><i class='far fa-clock'></i>:<%=events[''][i].time %></span>
                                 </div>
                             </div>
@@ -184,12 +85,10 @@
             </div>
         </div>
 
-
-        <div class="footerposition" style="width: 100%; background-color: black; z-index: 1;">
+        <!-- footer section -->
+        <div class="footerposition">
             <%- include("partials/footer.ejs") %>
         </div>
-
-        <script src="/js/home.js"></script>
 </body>
 
 </html>
