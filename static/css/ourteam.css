@@ -91,7 +91,6 @@
     content: "";
     width: 250%;
     height: 0;
-    /* border-radius: 50%; */
     background-color: yellow;
     position: absolute;
     bottom: 0;
@@ -128,4 +127,51 @@
 html,
 body {
     overflow-x: hidden;
+}
+
+.navitem {
+    color: rgb(255, 255, 255);
+}
+
+.entry {
+    background: url('https://img.freepik.com/premium-photo/abstract-green-turquoise-texture-background-vintage-grunge-green-backdrop-aesthetic-creative-design_364465-203.jpg?w=1060')no-repeat center center/cover;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.titled {
+    color: rgb(255, 255, 255);
+    font-size: 8rem;
+
+}
+.title{
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+.navbarposition {
+    background-image: linear-gradient(to left, black, white);
+    width: 100%;
+    z-index: 1;
+}
+
+.footerposition {
+    width: 100%;
+    background-color: black;
+    z-index: 1;
+}
+h1,h2,h3{
+    color: black !important;
+}
+
+@media screen and (max-width:600px){
+    .titled{
+        font-size:3.8rem !important;
+    }
+    .title h1{
+        font-size:25px !important;
+    }
 }

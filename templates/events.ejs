@@ -9,93 +9,43 @@
     <title>Nirmaan-Club||Events</title>
     <!-- linking main styling file -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="fonts/icomoon/style.css">
     <link rel="stylesheet" href="/css/bootstrap/bootstrap.css">
-    <link rel="stylesheet" href="/css/jquery-ui.css">
-    <link rel="stylesheet" href="/css/jquery.fancybox.min.css">
     <link rel="stylesheet" href="/css/events.css">
     <link rel="stylesheet" href="/css/style.css">
 </head>
-<style>
-    .one:hover {
-        transform: translateY(0px);
-        transition: all 0.5s;
-    }
-
-    .one {
-        transform: translateY(10px);
-        transition: all 0.5s;
-    }
-
-    .boxes{
-        border-radius: 20px;
-    }
-    .boxes img{
-        border-radius: 20px 20px 0px 0px ;
-    }
-
-    .boxes {
-        min-height: 350px;
-        height: auto;
-    }
-    .boxes span{
-        font-size: 1.5rem;
-        color: black;     
-    }
-    .boxes{
-        text-align: center;
-        background: white;
-    }
-    .navitem{
-        color:white;
-    }
-
-    .entry{
-        background: url('https://img.freepik.com/free-photo/abstract-smoke-wallpaper-background-desktop_53876-133383.jpg?w=996&t=st=1671134915~exp=1671135515~hmac=26f3db27da9aefd1b4b94c32627033672e6441db3668afee5c543aeef1479571')no-repeat center center/cover;
-        background-attachment: fixed;
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .titled{
-        color: white;
-        font-size: 8rem;
-    }
-
-</style>
-
 
 <body>
-    <div class="navbarposition" style="background-image: linear-gradient(to left, black,white);";
-    width: 100%;
-    z-index: 1;>
+    <!-- navbar section -->
+    <div class="navbarposition">
         <%- include("partials/navbar.ejs") %>
     </div>
-
+    <!-- overlay for name -->
     <div class="entry">
         <div class="titled">
-            NIRMAAN-EVENTS
+            NIRMAAN EVENTS
         </div>
     </div>
-    <br><br>
-    <div class="site-warp" style="padding-bottom: 50px;width: 100% ;height:auto;">
 
+    <br><br>
+    <!-- main container -->
+    <div class="site-warp">
         <div class="contr">
+            <!-- for event variety -->
             <% for (let event in events){%>
+
                 <div class="titlename">
                     <%=event%>
-                    
                 </div>
+
                 <hr>
+                <!-- for particular event -->
                 <div class="eventname">
                     <% for(let i=0;i<events[event].length;i++){%>
                         <div class="one">
                             <div class="boxes">
-                                <a href="/eventname?eventname=<%=event%>&event=<%= events[event][i].topic%>&num=<%= i %>"
-                                    target="_blank">
+                            <a href="/eventname?eventname=<%=event%>&event=<%= events[event][i].topic%>&num=<%= i %>"
+                                    >
                                     <img src="<%= events[event][i].image %>" alt="">
                                 </a>
                                 <span>
@@ -107,16 +57,14 @@
                 </div>
                 <br><br>
                 <%}%>
-                
+
         </div>
 
     </div>
-    <div class="footerposition" style="position:absolute; width: 100%; background-color: black;">
+
+    <!-- footer section -->
+    <div class="footerposition">
         <%- include("partials/footer.ejs") %>
-    </div>
-    </div>
-
-    <script src="/js/event.js"></script>
+    </div> 
 </body>
-
 </html>

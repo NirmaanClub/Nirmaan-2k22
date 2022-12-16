@@ -10,80 +10,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="fonts/icomoon/style.css">
     <link rel="stylesheet" href="/css/bootstrap/bootstrap.css">
-    <link rel="stylesheet" href="/css/jquery-ui.css">
-    <link rel="stylesheet" href="/css/jquery.fancybox.min.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/gallery.css">
 </head>
 
-<style>
-    /* body{ */
-        /* background: url('https://images.pexels.com/photos/1323712/pexels-photo-1323712.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center/cover; */
-        /* background-image: linear-gradient(to right, black,white,black); */
-        /* background-attachment: fixed; */
-    /* } */
-    .contai{
-        width: 100%;
-    }
-    h2{
-        color: black;
-    }
-    .imageon{
-        width: 300px;
-        margin: 20px;
-        box-shadow: 1px 1px 10px 2px grey;
-        border-radius: 20px;
-        transform: translateY(10px);
-        transition: all 0.5s;
-    }
-    .imageon img{
-        width: 100%;
-        height: 250px;
-        border-radius: 20px;
-    }
-
-    .imageon:hover{
-        transform: translateY(0px);
-        transition: all 0.5s;
-    }
-
-    @media only screen and (max-width:500px){
-        .imageon img{
-            height: unset !important;
-        }
-        .titlebox h1{
-            font-size: 25px !important;
-        }
-    }
-
-    .entry{
-        background: url('https://img.freepik.com/free-vector/gradient-geometric-shapes-dark-background_52683-33027.jpg?w=996&t=st=1671135299~exp=1671135899~hmac=b24c47e3e2a47fd8e243c4617dab33094fe445c29d0654aae91a55f044f743b2')no-repeat center center/cover;
-        background-attachment: fixed;
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .titled{
-        color: white;
-        font-size: 8rem;
-    }
-</style>
-
 <body>
-    <div class="navbarposition" style="background-image: linear-gradient(to left, black,white);";
-    width: 100%;
-    z-index: 1;>
+    <!-- navbar section -->
+    <div class="navbarposition">
         <%- include("partials/navbar.ejs") %>
     </div>
+    <!-- creating overlay name section -->
     <div class="entry">
         <div class="titled">
-            NIRMAAN-GALLERY
+            NIRMAAN GALLERY
         </div>
     </div>
+    
     <br><br><br>
-
+    <!-- main container -->
     <div class="cont">
         <!-- all events -->
         <% for(let key in gallery){%>
@@ -91,16 +35,16 @@
             <br>
             <div class="event contai">
                 <div class="">
-                    <h2 class="text-center"><%=key%></h2>
+                    <h2 class="text-center">
+                        <%=key%>
+                    </h2>
                 </div>
                 <hr>
                 <div class="d-flex flex-wrap justify-content-center">
                     <!-- event images -->
                     <% for(let i=0;i<gallery[key][0].imglist.length;i++){%>
                         <div class="imageon">
-                            <img
-                                src="<%=gallery[key][0].imglist[i]%>"
-                                alt="">
+                            <img src="<%=gallery[key][0].imglist[i]%>" alt="">
                         </div>
                         <%}%>
                 </div>
@@ -108,7 +52,8 @@
             <%}%>
     </div>
 
-    <div class="footerposition" style="position:absolute; width: 100%; background-color: black;">
+    <!-- footer section -->
+    <div class="footerposition">
         <%- include("partials/footer.ejs") %>
     </div>
 
@@ -117,10 +62,10 @@
 
     <script>
         let imgdata = document.getElementsByClassName('imaged');
-        for(let i=0;i<imgdata.length;i++){
-            imgdata[i].addEventListener('click',()=>{
-                imgdata[i].firstElementChild.style.height='500px'
-                imagdata[i].firstElementChild.style.width='500px'
+        for (let i = 0; i < imgdata.length; i++) {
+            imgdata[i].addEventListener('click', () => {
+                imgdata[i].firstElementChild.style.height = '500px'
+                imagdata[i].firstElementChild.style.width = '500px'
             })
         }
     </script>
