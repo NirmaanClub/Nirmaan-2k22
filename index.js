@@ -20,7 +20,6 @@ app.set("view engine", "ejs");
 // using  builtin middleware for serving static files
 app.use(express.static(__dirname + "/static"))
 
-
 // creating routes
 
 // setting routes for navbar
@@ -32,7 +31,6 @@ app.get('/',async(req,res)=>{
     let context = {
         events: data.upevents
     }
-    console.log(data.upevents)
     res.render('index.ejs',context);
 })
 

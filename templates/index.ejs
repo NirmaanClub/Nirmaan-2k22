@@ -17,6 +17,65 @@
     <link rel="stylesheet" href="/css/index.css">
 </head>
 
+
+<style>
+    .conta {
+        width: 100%;
+        height: 100vh;
+        text-align: center;
+    }
+
+    .mained {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .festsection {
+        box-shadow: 0px 0px 60px -18px;
+        width: 80%;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .imageon,
+    .imageon img {
+        width: 550px;
+        height: 350px;
+    }
+
+    .dnone {
+        display: none;
+    }
+
+    .btned {
+        margin: 0px 40px;
+        font-size: 5rem;
+        color: black;
+    }
+
+    .infod {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 200px;
+    }
+
+    .mainedsection {
+        min-height: 600px;
+        height: auto;
+        width: 800px;
+    }
+
+    @media screen and (max-width:1000px){
+
+    }
+</style>
+
 <body>
     <!-- navbar section -->
     <div class="navbarposition">
@@ -31,7 +90,7 @@
     <!-- title overlay -->
     <dic class="title">
         <h1>Nirmaan Club</h1>
-        </div>
+    </div>
         <br>
         <div class="container">
             <br>
@@ -55,33 +114,95 @@
                     engineering via different activities.
                 </p>
             </div>
-            <!-- upcoming events section -->
-            <div class=" upcomming">
-                <h2>UPCOMING EVENTS</h2>
-                <div class="section">
-                    <%if(events.length> 0){%>
-                        <% for (let i=0;i<events[''].length;i++){%>
-                            <div class="card">
-                                <img src="<%=events[''][i].image%>" alt="">
-                                <br>
-                                <div class="about">
-                                    <span class="title">
-                                        <%=events[''][i].topic %>
-                                    </span>
-                                    <span class="venue">
-                                        <%=events[''][i].venue %>
-                                    </span>
-                                    <span class="date"><i class='far fa-calendar-alt'></i>:<%=events[''][i].date %>
-                                    </span>
-                                    <span class="time"><i class='far fa-clock'></i>:<%=events[''][i].time %></span>
-                                </div>
-                            </div>
-                            <%}%>
-                                <%} else{%>
-                                    <img src="/images/coming.png" alt="">
-                                    <%}%>
+        </div>
+
+        <!-- adding nirmaan fest -->
+        <!-- <div class="conta">
+            <h2>NIRMAAN FEST</h2>
+            <br>
+            <div class="festsection">
+                <div class="btned">
+                    <i id="left" class="fa fa-caret-left"></i>
                 </div>
 
+                <div class="mainedsection">
+                    <br>
+                    <div class="mained dnone">
+                        <div class="imageon">
+                            <img src="https://user-images.githubusercontent.com/115873607/199826218-8f03f758-c3f0-45a3-b4cb-6cb5d6609112.jpg"
+                                alt="">
+                        </div>
+                        <div class="infod">
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis blanditiis doloremque
+                                accusamus eaque impedit? Quaerat quis tempore, iure quia ipsum itaque fuga nobis,
+                                laboriosam architecto repudiandae accusamus explicabo debitis culpa provident quibusdam
+                                quod quae dignissimos ducimus delectus temporibus veritatis doloribus. Doloremque
+                                recusandae accusamus aliquam commodi optio vel facere, cum odit.</p>
+                        </div>
+                    </div>
+                    <div class="mained">
+                        <div class="imageon">
+                            <img src="https://user-images.githubusercontent.com/107313172/201477121-6efb2a91-7a7b-4ba4-8f48-39cf33b7ae6a.jpg"
+                                alt="">
+                        </div>
+                        <div class="infod">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, culpa voluptatem unde
+                                provident aspernatur consequuntur quaerat doloremque, adipisci accusantium fuga ducimus
+                                perferendis tempore facere aliquam et eligendi odit dolorum non aliquid exercitationem?
+                                Rem ducimus, deleniti placeat earum saepe consequatur eveniet hic, quibusdam beatae
+                                temporibus officiis. Ab amet fuga suscipit laboriosam!</p>
+                        </div>
+                    </div>
+                    <div class="mained dnone">
+                        <div class="imageon">
+                            <img src="https://user-images.githubusercontent.com/107313172/201491102-d77edd43-4697-42e5-9dc4-94777fd8c85b.jpg"
+                                alt="">
+                        </div>
+                        <div class="infod">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, sed? Odio ea
+                                perferendis quasi provident repellat. Sed necessitatibus temporibus, veniam eveniet
+                                vitae nihil voluptates facilis minus voluptatem ipsum tenetur dolor magni possimus sint
+                                laudantium reprehenderit cumque commodi quis dolorum voluptas repellat? Cum voluptatibus
+                                harum accusantium vitae rerum deserunt hic quisquam?</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="btned">
+                    <i id="right" class="fa fa-caret-right"></i>
+                </div>
+            </div>
+
+        </div> -->
+
+
+
+
+        <!-- upcoming events section -->
+        <div class="container upcomming">
+            <h2>UPCOMING EVENTS</h2>
+            <div class="section">
+                <%if(Object.keys(events)!=""){%>
+                    <% for (let i=0;i<events['upcoming'].length;i++){%>
+                        <div class="card">
+                            <img src="<%=events['upcoming'][i].image%>" alt="">
+                            <br>
+                            <div class="about">
+                                <span class="title">
+                                    <%=events['upcoming'][i].topic %>
+                                </span>
+                                <span class="venue">
+                                    <%=events['upcoming'][i].venue %>
+                                </span>
+                                <span class="date"><i class='far fa-calendar-alt'></i>:<%=events['upcoming'][i].date %>
+                                </span>
+                                <span class="time"><i class='far fa-clock'></i>:<%=events['upcoming'][i].time %></span>
+                            </div>
+                        </div>
+                        <%}%>
+                            <%} else{%>
+                                <img src="/images/coming.png" alt="">
+                                <%}%>
             </div>
         </div>
 
@@ -89,6 +210,43 @@
         <div class="footerposition">
             <%- include("partials/footer.ejs") %>
         </div>
+
+        <script>
+            let leftbtn = document.getElementById('left');
+            let rightbtn = document.getElementById('right');
+            let fest = document.getElementsByClassName('mained');
+
+            console.log(leftbtn)
+            let count = 1;
+            fest[count].style.display = 'flex';
+
+            let timeinterval = setInterval(right, 5000);
+
+            leftbtn.addEventListener('click', left)
+            function left() {
+                fest[count].style.display = 'none';
+                count--;
+                if (count >= 0) {
+                    fest[count].style.display = 'flex';
+                }
+                else {
+                    count = 2;
+                    fest[count].style.display = 'flex';
+                }
+            }
+            rightbtn.addEventListener('click', right)
+            function right() {
+                fest[count].style.display = 'none';
+                count++;
+                if (count <= 2) {
+                    fest[count].style.display = 'flex';
+                }
+                else {
+                    count = 0;
+                    fest[count].style.display = 'flex';
+                }
+            }
+        </script>
 </body>
 
 </html>

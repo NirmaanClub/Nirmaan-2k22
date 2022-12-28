@@ -6,6 +6,7 @@ const gallery = require('./models/gallery');  //getting gallery data through dat
 // getting team data
 async function teamdata() {
     const TeamMembers = await OurTeam.find({});
+    TeamMembers.sort();
     let teamMem = {};
     for (let i = 0; i < TeamMembers.length; i++) {
         teamMem[TeamMembers[i].position] = "";
