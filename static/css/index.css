@@ -94,8 +94,8 @@ h1,h2,h3,h4,h5{
 }
 
 .section img{
-    width:300px;
-    height: 180px;
+    object-fit: cover;
+    height: 150px;
 }
 
 .navbarposition {
@@ -119,4 +119,8 @@ h1,h2,h3,h4,h5{
         font-size: 14px;
     }
 
+}
+
+body{
+    height: auto;
 }

@@ -2,6 +2,8 @@ const express = require('express');
 const port = 80||process.env.port;
 const app = express();
 const path = require('path');
+const compression = require('compression');
+
 require("dotenv").config({ path: "./config/config.env" });
 
 const getrows = require('./readsheet.js');
@@ -17,9 +19,11 @@ connection();
 app.set('views',"./templates")
 app.set("view engine", "ejs");
 
+
+app.use(compression());
+
 // using  builtin middleware for serving static files
 app.use(express.static(__dirname + "/static"))
-
 
 // creating routes
 
@@ -32,7 +36,6 @@ app.get('/',async(req,res)=>{
     let context = {
         events: data.upevents
     }
-    console.log(data.upevents)
     res.render('index.ejs',context);
 })
 
