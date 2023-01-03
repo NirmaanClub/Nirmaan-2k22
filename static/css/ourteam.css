@@ -119,14 +119,13 @@
     flex-wrap: wrap;
 }
 
-/* body {
-    background: url('https://img.freepik.com/premium-vector/abstract-technology-background_41981-1248.jpg?w=2000') no-repeat center center/cover;
-    background-attachment: fixed;
-} */
-
 html,
 body {
     overflow-x: hidden;
+}
+
+body,*{
+    font-family: 'Source Serif Pro', serif;
 }
 
 .navitem {

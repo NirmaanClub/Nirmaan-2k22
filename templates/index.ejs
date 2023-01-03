@@ -9,80 +9,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nirmaan-Club</title>
     <!-- linking main styling file -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="fonts/icomoon/style.css">
     <link rel="stylesheet" href="/css/bootstrap/bootstrap.css">
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <link rel="stylesheet" href="/css/index.css">
 </head>
-
-
-<style>
-    h1,h2,h3,h4,h5,h6{
-        font-family: 'Source Serif Pro', serif;
-    }
-    .conta {
-        width: 100%;
-        height: 100vh;
-        text-align: center;
-    }
-
-    .mained {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .festsection {
-        box-shadow: 0px 0px 60px -18px;
-        width: 80%;
-        margin: auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .imageon,
-    .imageon img {
-        width: 550px;
-        height: 350px;
-    }
-
-    .dnone {
-        display: none;
-    }
-
-    .btned {
-        margin: 0px 40px;
-        font-size: 5rem;
-        color: black;
-    }
-
-    .infod {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 200px;
-    }
-
-    .mainedsection {
-        min-height: 600px;
-        height: auto;
-        width: 800px;
-    }
-
-    @media screen and (max-width:1000px){
-
-    }
-
-    body,*{
-        font-family: 'Source Serif Pro', serif;
-    }
-</style>
 
 <body>
     <!-- navbar section -->
@@ -220,40 +150,40 @@
         </div>
 
         <script>
-            let leftbtn = document.getElementById('left');
-            let rightbtn = document.getElementById('right');
-            let fest = document.getElementsByClassName('mained');
+            // let leftbtn = document.getElementById('left');
+            // let rightbtn = document.getElementById('right');
+            // let fest = document.getElementsByClassName('mained');
 
-            console.log(leftbtn)
-            let count = 1;
-            fest[count].style.display = 'flex';
+            // console.log(leftbtn)
+            // let count = 1;
+            // fest[count].style.display = 'flex';
 
-            let timeinterval = setInterval(right, 5000);
+            // let timeinterval = setInterval(right, 5000);
 
-            leftbtn.addEventListener('click', left)
-            function left() {
-                fest[count].style.display = 'none';
-                count--;
-                if (count >= 0) {
-                    fest[count].style.display = 'flex';
-                }
-                else {
-                    count = 2;
-                    fest[count].style.display = 'flex';
-                }
-            }
-            rightbtn.addEventListener('click', right)
-            function right() {
-                fest[count].style.display = 'none';
-                count++;
-                if (count <= 2) {
-                    fest[count].style.display = 'flex';
-                }
-                else {
-                    count = 0;
-                    fest[count].style.display = 'flex';
-                }
-            }
+            // leftbtn.addEventListener('click', left)
+            // function left() {
+            //     fest[count].style.display = 'none';
+            //     count--;
+            //     if (count >= 0) {
+            //         fest[count].style.display = 'flex';
+            //     }
+            //     else {
+            //         count = 2;
+            //         fest[count].style.display = 'flex';
+            //     }
+            // }
+            // rightbtn.addEventListener('click', right)
+            // function right() {
+            //     fest[count].style.display = 'none';
+            //     count++;
+            //     if (count <= 2) {
+            //         fest[count].style.display = 'flex';
+            //     }
+            //     else {
+            //         count = 0;
+            //         fest[count].style.display = 'flex';
+            //     }
+            // }
         </script>
 </body>
 

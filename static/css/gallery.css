@@ -34,12 +34,6 @@ hr {
     border-radius: 0.75rem !important;
 }
 
-/* .img-container:hover {
-    opacity: 1 !important;
-    transform: scale(1.05);
-    transition: all 0.8s ease;
-} */
-
 html,
 body {
     overflow-x: hidden;
@@ -70,16 +64,9 @@ h2 {
     object-fit: cover;
 }
 
-/* .imageon:hover {
-    transform: translateY(0px);
-    transition: all 0.5s;
-} */
-
-/* @media only screen and (max-width:500px) {
-    .imageon img {
-        height: unset !important;
-    }
-} */
+body,*{
+    font-family: 'Source Serif Pro', serif;
+}
 
 .entry {
     background: url('/images/bg.jpg')no-repeat center center/cover;
