@@ -2,8 +2,9 @@
 <html lang="en">
 
 <head>
-    <link rel="icon" href="/images/Picture.png">
+    <link rel="icon" href="/images/Picture1.png">
     <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@1,600&display=swap" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nirmaan-Club</title>
@@ -19,6 +20,9 @@
 
 
 <style>
+    h1,h2,h3,h4,h5,h6{
+        font-family: 'Source Serif Pro', serif;
+    }
     .conta {
         width: 100%;
         height: 100vh;
@@ -74,6 +78,10 @@
     @media screen and (max-width:1000px){
 
     }
+
+    body,*{
+        font-family: 'Source Serif Pro', serif;
+    }
 </style>
 
 <body>
@@ -88,7 +96,7 @@
     </div>
 
     <!-- title overlay -->
-    <dic class="title">
+    <div class="title">
         <h1>Nirmaan Club</h1>
     </div>
         <br>
@@ -96,7 +104,7 @@
             <br>
             <!-- about us section -->
             <div id="info">
-                <h2>ABOUT US</h2>
+                <h2 class="h2">ABOUT US</h2>
                 <br>
                 <p> Nirmaan Club is a Technical Club of IIT Mandi where someone can explore the beauty of civil
                     engineering
@@ -180,7 +188,7 @@
 
         <!-- upcoming events section -->
         <div class="container upcomming">
-            <h2>UPCOMING EVENTS</h2>
+            <h2 class="h2">UPCOMING EVENTS</h2>
             <div class="section">
                 <%if(Object.keys(events)!=""){%>
                     <% for (let i=0;i<events['upcoming'].length;i++){%>
