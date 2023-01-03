@@ -22,7 +22,7 @@
 
 .title h1 {
     color: rgb(255, 255, 255);
-    font-size: 7rem;
+    font-size: 9rem;
     height: 575px;
     display: flex;
     justify-content: center;
@@ -37,7 +37,7 @@ p {
 
 
 #info p {
-    font-size: 17.5px;
+    font-size: 21px;
 }
 
 #info {
@@ -91,6 +91,7 @@ footer p {
 }
 h1,h2,h3,h4,h5{
     color: black;
+    font-family: 'Source Serif Pro', serif;
 }
 
 .section img{
@@ -110,13 +111,22 @@ h1,h2,h3,h4,h5{
     z-index: 1;
 }
 
+.h2{
+    font-size: 3rem;
+    color: black;
+    font-family: 'Source Serif Pro', serif;
+}
 
 @media screen and (max-width:600px){
     .title h1{
         font-size:4rem !important;
     }
     #info p {
-        font-size: 14px;
+        font-size: 17px;
+    }
+    .h2{
+        font-size: 2.5rem;
+        color: black;
     }
 
 }
