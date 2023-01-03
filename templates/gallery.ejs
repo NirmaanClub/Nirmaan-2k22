@@ -8,17 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nirmaan-Club||Gallery</title>
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@1,600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="fonts/icomoon/style.css">
     <link rel="stylesheet" href="/css/bootstrap/bootstrap.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/gallery.css">
 </head>
 
 <style>
-    body,*{
-        font-family: 'Source Serif Pro', serif;
-    }
+    
 </style>
 
 <body>
@@ -51,7 +47,7 @@
                     <!-- event images -->
                     <% for(let i=0;i<gallery[key][0].imglist.length;i++){%>
                         <div class="imageon">
-                            <img src="<%=gallery[key][0].imglist[i]%>" alt="">
+                            <img class="image" loading="lazy" src="<%=gallery[key][0].imglist[i]%>" alt="">
                         </div>
                         <%}%>
                 </div>
@@ -65,16 +61,26 @@
     </div>
 
 
-
-
     <script>
-        let imgdata = document.getElementsByClassName('imaged');
-        for (let i = 0; i < imgdata.length; i++) {
-            imgdata[i].addEventListener('click', () => {
-                imgdata[i].firstElementChild.style.height = '500px'
-                imagdata[i].firstElementChild.style.width = '500px'
-            })
-        }
+        // let imgdata = document.getElementsByClassName('image');
+        // // console.log(imgdata.length);
+        // for (let i = 0; i < imgdata.length; i++) {
+        //     let flag = 1;
+        //     imgdata[i].addEventListener('click', () => {
+        //         console.log(flag);
+
+        //         if(flag){
+        //             imgdata[i].style.width = "100%";
+        //             imgdata[i].style.height = "100%";
+        //             flag =0;
+        //         }
+        //         else{
+        //             flag = 1;
+        //             imgdata[i].style.width = "100%";
+        //             imgdata[i].style.height = "250px";
+        //         } 
+        //     })
+        // }
     </script>
 
 </body>
