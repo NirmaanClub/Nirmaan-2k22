@@ -9,11 +9,6 @@
     align-items: center;
 }
 
-body {
-    background: url('<%=eventdata.image%>') no-repeat center center/cover;
-    background-attachment: fixed;
-}
-
 *,
 body {
     font-family: 'Source Serif Pro', serif;

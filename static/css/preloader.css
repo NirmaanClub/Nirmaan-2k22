@@ -1,0 +1,56 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+#preload{
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    place-content: center;
+    position: fixed;
+
+}
+.center_div{
+    width: 300px;
+    height: 300px;
+}
+
+.rot{
+    position: absolute;
+    border-radius: 50%;
+    width: 20rem;
+    height: 20rem;
+    background: black;
+    border-right: 7px solid red;
+    animation: borderColor 3s linear infinite;
+}
+
+@keyframes borderColor {
+    0%{
+        border-color: red;
+        transform: rotate(0deg);
+    }
+    
+    40%{
+        border-color: yellow;
+    }
+
+    80%{
+        border-color:   rgb(255, 132, 0);
+    }
+
+    100%{
+        border-color: red;
+        transform: rotate(360deg);
+    }
+}
+
+.preload_h1{
+    position: absolute;
+    font-size: 30px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    color: #fff;
+}

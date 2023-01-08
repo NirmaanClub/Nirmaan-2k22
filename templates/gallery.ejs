@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <meta name="google-site-verification" content="eSee4zPkYDsPLiwNKfP6Ei-W-5RT8tN4eTjvEbJhYhY" />
     <link rel="icon" href="/images/Picture1.png">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,11 +14,10 @@
     <link rel="stylesheet" href="/css/gallery.css">
 </head>
 
-<style>
-    
-</style>
+<body onload="load()">
 
-<body>
+    <%- include("partials/preloader.ejs") %>
+
     <!-- navbar section -->
     <div class="navbarposition">
         <%- include("partials/navbar.ejs") %>
@@ -47,7 +47,7 @@
                     <!-- event images -->
                     <% for(let i=0;i<gallery[key][0].imglist.length;i++){%>
                         <div class="imageon">
-                            <img class="image" loading="lazy" src="<%=gallery[key][0].imglist[i]%>" alt="">
+                            <img class="image" loading="eager" src="<%=gallery[key][0].imglist[i]%>" alt="">
                         </div>
                         <%}%>
                 </div>

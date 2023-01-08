@@ -15,7 +15,10 @@
     <link rel="stylesheet" href="/css/index.css">
 </head>
 
-<body>
+<body onload="load()">
+
+    <%- include("partials/preloader.ejs") %>
+
     <!-- navbar section -->
     <div class="navbarposition">
         <%- include("partials/navbar.ejs") %>
