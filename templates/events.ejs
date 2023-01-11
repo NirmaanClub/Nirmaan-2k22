@@ -17,15 +17,17 @@
 
 <body onload = "load()">
     <%- include("partials/preloader.ejs") %>
-    <!-- navbar section -->
-    <div class="navbarposition">
-        <%- include("partials/navbar.ejs") %>
-    </div>
+
     <!-- overlay for name -->
     <div class="entry">
         <div class="titled">
             NIRMAAN ACTIVITIES
         </div>
+    </div>
+
+    <!-- navbar section -->
+    <div id= "nav" class="navbarposition">
+        <%- include("partials/navbar.ejs") %>
     </div>
 
     <br><br>
@@ -41,7 +43,7 @@
 
                 <hr>
                 <!-- for particular event -->
-                <div class="eventname">
+                <div class="eventname" id="name">
                     <% for(let i=0;i<events[event].length;i++){%>
                         <div class="one">
                             <div class="boxes">
@@ -66,6 +68,9 @@
     <!-- footer section -->
     <div class="footerposition">
         <%- include("partials/footer.ejs") %>
-    </div> 
+    </div>
+    
+    <script src="/js/navbar.js"></script>
+    
 </body>
 </html>

@@ -21,10 +21,7 @@
 
 <body onload = "load()">
     <%- include("partials/preloader.ejs") %>
-    <!-- navbar section -->
-    <div class="navbarposition">
-        <%- include("partials/navbar.ejs") %>
-    </div>
+
 
     <!-- overlay section -->
     <div class="entry">
@@ -33,6 +30,10 @@
         </div>
     </div>
 
+        <!-- navbar section -->
+        <div class="navbarposition " id="nav" >
+            <%- include("partials/navbar.ejs") %>
+        </div>
     <br><br><br>
 
     <!-- main container  -->
@@ -49,7 +50,7 @@
                 </div>
                 <div class="hr"></div>
                 <br>
-                <div class="conti">
+                <div class="conti" id="name">
                     <!-- adding member card -->
                     <% for(let i=0;i<teams[team].length;i++){%>
                         <div class="profilecard">
@@ -115,6 +116,8 @@
     <div class="footerposition">
         <%- include("partials/footer.ejs") %>
     </div>
+
+    <script src="/js/navbar.js"></script>
 </body>
 
 </html>

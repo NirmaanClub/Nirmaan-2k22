@@ -28,7 +28,7 @@
 <body onload="load()">
     <%- include("partials/preloader.ejs")%>
     <!-- adding navbar section -->
-    <div class="navbarposition">
+    <div class="navbarposition" id="nav">
         <%- include("partials/navbar.ejs") %>
     </div>
 
@@ -79,6 +79,8 @@
     <div class="footerposition">
         <%- include("partials/footer.ejs") %>
     </div>
+
+    <script src="/js/navbar.js"></script>
 </body>
 
 </html>
