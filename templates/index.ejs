@@ -5,7 +5,10 @@
     <meta name="google-site-verification" content="eSee4zPkYDsPLiwNKfP6Ei-W-5RT8tN4eTjvEbJhYhY" />
     <link rel="icon" href="/images/Picture1.png">
     <meta charset="UTF-8">
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@1,600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@1,600&display=swap"
+        rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nirmaan-Club</title>
@@ -15,33 +18,59 @@
     <link rel="stylesheet" href="/css/index.css">
 </head>
 
-<!-- <style>
-    #contact{
-        border: 2px solid red;
+<style>
+    .boxed {
+        width: 300px;
+        height: 300px;
+        border-radius: 10px;
+        margin: 20px;
+        display: grid;
+        place-items: center;
+        background-color: rgb(0,0,0,0.5);
+        box-shadow: 0px 0px 10px grey;
     }
-</style> -->
+
+    .project {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .boxed img{
+        width: 300px;
+        height: 300px;
+        border-radius: 10px;
+        z-index: -1;
+    }
+
+    .boxed h2 {
+        transform: translateY(-150px);
+        color:white !important;
+    }
+
+</style>
 
 <body onload="load()">
 
     <%- include("partials/preloader.ejs") %>
 
-    <!-- setting video background -->
-    <div id="video">
-        <video src="/images/mainbg.mp4" loop muted autoplay></video>
-    </div>
+        <!-- setting video background -->
+        <div id="video">
+            <video src="/images/mainbg.mp4" loop muted autoplay></video>
+        </div>
 
-    <!-- title overlay -->
-    <div class="title">
-        <h1>Nirmaan Club</h1>
-    </div>
+        <!-- title overlay -->
+        <div class="title" style="cursor: pointer;">
+            <h1>Nirmaan Club</h1>
+        </div>
 
-    <!-- navbar section -->
-    <div id= "nav" class="navbarposition">
-        <%- include("partials/navbar.ejs") %>
-    </div>
+        <!-- navbar section -->
+        <div id="nav" class="navbarposition">
+            <%- include("partials/navbar.ejs") %>
+        </div>
         <br>
 
-        <div class="container">
+        <div class="container" style="cursor:pointer ;">
             <br>
             <!-- about us section -->
             <div id="info">
@@ -66,67 +95,38 @@
         </div>
 
         <!-- adding nirmaan fest -->
-        <!-- <div class="conta">
-            <h2>NIRMAAN FEST</h2>
-            <br>
-            <div class="festsection">
-                <div class="btned">
-                    <i id="left" class="fa fa-caret-left"></i>
-                </div>
+        <!-- <div class="container ">
+            <h2 class="h2">CLUB PROJECTS</h2>
+            <br><br>
+            <section class="project">
 
-                <div class="mainedsection">
-                    <br>
-                    <div class="mained dnone">
-                        <div class="imageon">
-                            <img src="https://user-images.githubusercontent.com/115873607/199826218-8f03f758-c3f0-45a3-b4cb-6cb5d6609112.jpg"
-                                alt="">
-                        </div>
-                        <div class="infod">
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis blanditiis doloremque
-                                accusamus eaque impedit? Quaerat quis tempore, iure quia ipsum itaque fuga nobis,
-                                laboriosam architecto repudiandae accusamus explicabo debitis culpa provident quibusdam
-                                quod quae dignissimos ducimus delectus temporibus veritatis doloribus. Doloremque
-                                recusandae accusamus aliquam commodi optio vel facere, cum odit.</p>
-                        </div>
-                    </div>
-                    <div class="mained">
-                        <div class="imageon">
-                            <img src="https://user-images.githubusercontent.com/107313172/201477121-6efb2a91-7a7b-4ba4-8f48-39cf33b7ae6a.jpg"
-                                alt="">
-                        </div>
-                        <div class="infod">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, culpa voluptatem unde
-                                provident aspernatur consequuntur quaerat doloremque, adipisci accusantium fuga ducimus
-                                perferendis tempore facere aliquam et eligendi odit dolorum non aliquid exercitationem?
-                                Rem ducimus, deleniti placeat earum saepe consequatur eveniet hic, quibusdam beatae
-                                temporibus officiis. Ab amet fuga suscipit laboriosam!</p>
-                        </div>
-                    </div>
-                    <div class="mained dnone">
-                        <div class="imageon">
-                            <img src="https://user-images.githubusercontent.com/107313172/201491102-d77edd43-4697-42e5-9dc4-94777fd8c85b.jpg"
-                                alt="">
-                        </div>
-                        <div class="infod">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, sed? Odio ea
-                                perferendis quasi provident repellat. Sed necessitatibus temporibus, veniam eveniet
-                                vitae nihil voluptates facilis minus voluptatem ipsum tenetur dolor magni possimus sint
-                                laudantium reprehenderit cumque commodi quis dolorum voluptas repellat? Cum voluptatibus
-                                harum accusantium vitae rerum deserunt hic quisquam?</p>
-                        </div>
-                    </div>
-                </div>
+                <% for( let key in projects){%>
+                    
+                    <div class="left boxed">
+                        <img src = "<%= projects[key][0].image %>" alt="">
+                        <h2 >
+                            <a style="color:white ;" href="#"><%=key%></a>
+                        </h2>
+                    </div>                    
 
-                <div class="btned">
-                    <i id="right" class="fa fa-caret-right"></i>
-                </div>
-            </div>
+                    <%}%>
 
-        </div> -->
+                
+                <div class="mid boxed">
+                    <img src="/images/bg.jpg" alt="">
+                    <a href="#">EVENT-2</a>
+                </div>
+                <div class="right boxed">
+                    <img src="/images/bg.jpg" alt="">
+                    <a href="#">EVENT-3</a>
+                </div> -->
+            <!-- </section> -->
+
+        <!-- </div> --> -->
 
 
         <!-- upcoming events section -->
-        <div class="container upcomming">
+        <div class="container upcomming" style="cursor: pointer;" >
             <h2 class="h2">UPCOMING EVENTS</h2>
             <div class="section">
                 <%if(Object.keys(events)!=""){%>
@@ -163,55 +163,13 @@
         </div>
 
  -->
-
         <!-- footer section -->
         <div class="footerposition">
             <%- include("partials/footer.ejs") %>
         </div>
 
-        <script>
-            // let leftbtn = document.getElementById('left');
-            // let rightbtn = document.getElementById('right');
-            // let fest = document.getElementsByClassName('mained');
 
-            // console.log(leftbtn)
-            // let count = 1;
-            // fest[count].style.display = 'flex';
-
-            // let timeinterval = setInterval(right, 5000);
-
-            // leftbtn.addEventListener('click', left)
-            // function left() {
-            //     fest[count].style.display = 'none';
-            //     count--;
-            //     if (count >= 0) {
-            //         fest[count].style.display = 'flex';
-            //     }
-            //     else {
-            //         count = 2;
-            //         fest[count].style.display = 'flex';
-            //     }
-            // }
-            // rightbtn.addEventListener('click', right)
-            // function right() {
-            //     fest[count].style.display = 'none';
-            //     count++;
-            //     if (count <= 2) {
-            //         fest[count].style.display = 'flex';
-            //     }
-            //     else {
-            //         count = 0;
-            //         fest[count].style.display = 'flex';
-            //     }
-            // }
-
-            
-
-
-        </script>
-
-
-<script src="/js/navbar.js"></script>
+        <script src="/js/navbar.js"></script>
 </body>
 
 </html>
