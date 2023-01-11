@@ -15,14 +15,15 @@
     <link rel="stylesheet" href="/css/index.css">
 </head>
 
+<!-- <style>
+    #contact{
+        border: 2px solid red;
+    }
+</style> -->
+
 <body onload="load()">
 
     <%- include("partials/preloader.ejs") %>
-
-    <!-- navbar section -->
-    <div class="navbarposition">
-        <%- include("partials/navbar.ejs") %>
-    </div>
 
     <!-- setting video background -->
     <div id="video">
@@ -33,7 +34,13 @@
     <div class="title">
         <h1>Nirmaan Club</h1>
     </div>
+
+    <!-- navbar section -->
+    <div id= "nav" class="navbarposition">
+        <%- include("partials/navbar.ejs") %>
+    </div>
         <br>
+
         <div class="container">
             <br>
             <!-- about us section -->
@@ -118,8 +125,6 @@
         </div> -->
 
 
-
-
         <!-- upcoming events section -->
         <div class="container upcomming">
             <h2 class="h2">UPCOMING EVENTS</h2>
@@ -147,6 +152,17 @@
                                 <%}%>
             </div>
         </div>
+
+
+        <!-- upcoming events section
+        <div class="container" id="contact">
+            <h2 class="h2">CONTACT US</h2>
+            <div class="section">
+                
+            </div>
+        </div>
+
+ -->
 
         <!-- footer section -->
         <div class="footerposition">
@@ -188,7 +204,14 @@
             //         fest[count].style.display = 'flex';
             //     }
             // }
+
+            
+
+
         </script>
+
+
+<script src="/js/navbar.js"></script>
 </body>
 
 </html>

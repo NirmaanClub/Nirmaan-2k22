@@ -165,7 +165,7 @@ html,
     .navbarposition {
         background-image: linear-gradient(to left, black, white);
         width: 100%;
-        z-index: 1;
+        transform: translateX(-1000px);
     }
 
     .footerposition {

@@ -14,14 +14,8 @@
     <link rel="stylesheet" href="/css/gallery.css">
 </head>
 
-<body onload="load()">
+<body>
 
-    <%- include("partials/preloader.ejs") %>
-
-    <!-- navbar section -->
-    <div class="navbarposition">
-        <%- include("partials/navbar.ejs") %>
-    </div>
     <!-- creating overlay name section -->
     <div class="entry">
         <div class="titled">
@@ -29,6 +23,11 @@
         </div>
     </div>
     
+    <!-- navbar section -->
+    <div id= "nav" class="navbarposition">
+        <%- include("partials/navbar.ejs") %>
+    </div>
+
     <br><br><br>
     <!-- main container -->
     <div class="cont">
@@ -47,7 +46,7 @@
                     <!-- event images -->
                     <% for(let i=0;i<gallery[key][0].imglist.length;i++){%>
                         <div class="imageon">
-                            <img class="image" loading="eager" src="<%=gallery[key][0].imglist[i]%>" alt="">
+                            <img class="image" loading="lazy" src="<%=gallery[key][0].imglist[i]%>" alt="">
                         </div>
                         <%}%>
                 </div>
@@ -83,6 +82,7 @@
         // }
     </script>
 
+<script src="/js/navbar.js"></script>
 </body>
 
 </html>

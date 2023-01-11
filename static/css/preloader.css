@@ -9,6 +9,7 @@
     display: grid;
     place-content: center;
     position: fixed;
+    z-index: 100;
 
 }
 .center_div{
