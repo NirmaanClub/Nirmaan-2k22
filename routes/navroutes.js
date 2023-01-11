@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const {galleryarr,festobj,team} = require('../readdb.js');
-const getrows = require('../readsheet.js');
+const {activity , upComing} = require('../readsheet');
 
 
 // setting navigation routes
@@ -30,9 +30,10 @@ router.get('/ourteam', async (req, res) => {
 })
 
 router.get('/events', async (req, res) => {
-    let data = await getrows();
+    let data = await activity();
+    // console.log(data);
     let context = {
-        events: data.events
+        events: data
     }
     res.render('events.ejs', context);
 })
