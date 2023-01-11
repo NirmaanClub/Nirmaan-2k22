@@ -6,7 +6,7 @@ const compression = require('compression');
 
 require("dotenv").config({ path: "./config/config.env" });
 
-const getrows = require('./readsheet.js');
+const {activity , upComing} = require('./readsheet');
 
 // setting navigation routes
 const navroutes = require('./routes/navroutes.js');
@@ -32,9 +32,9 @@ app.use('/',navroutes)
 
 app.get('/',async(req,res)=>{
     // adding data dynamically to page
-    let data = await getrows();
+    let data = await upComing();
     let context = {
-        events: data.upevents
+        events: data
     }
     res.render('index.ejs',context);
 })
