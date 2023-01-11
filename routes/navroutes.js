@@ -41,8 +41,7 @@ router.get('/events', async (req, res) => {
 router.get('/eventname',async(req,res)=>{
     let num = req.query.num;
     let eventname = req.query.eventname;
-    let data = await getrows();
-    data = data.events;
+    let data = await activity();
     let elem = data[eventname][num];
     let winner=0
     if(elem.winner){

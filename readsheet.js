@@ -39,7 +39,6 @@ module.exports = {
             }
             Events[key] = arr;
         }
-        console.log(Events);
         return Events;
     },
 
