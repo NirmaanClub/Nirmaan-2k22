@@ -45,8 +45,6 @@ async function festdata() {
     return festobj
 }
 
-
-
 // getting gallery data
 
 async function gallerydata() {

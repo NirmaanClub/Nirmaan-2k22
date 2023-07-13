@@ -41,7 +41,14 @@ router.get('/events', async (req, res) => {
 router.get('/eventname',async(req,res)=>{
     let num = req.query.num;
     let eventname = req.query.eventname;
-    let data = await activity();
+    let data = {};
+    try {
+        
+        data = await activity();
+        
+    } catch (error) {
+        console.log( "error from google spreadsheet" );
+    }
     let elem = data[eventname][num];
     let winner=0
     if(elem.winner){

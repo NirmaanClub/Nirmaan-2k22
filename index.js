@@ -32,12 +32,15 @@ app.use('/',navroutes)
 
 app.get('/',async(req,res)=>{
     // adding data dynamically to page
-    let data = await upComing();
+    let data = {};
+    try {
+        data = await upComing();
+        
+    }
+    catch(e){
+        console.log( " getting errors from google spreadsheets " );
+    }
     let festData = await modelData.festobj();
-    console.log(festData.Talks[0].image);
-    // for(key in festData){
-    //     console.log(festData[0]);
-    // }
     let context = {
         events : data,
         projects : festData
