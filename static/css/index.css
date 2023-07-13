@@ -206,7 +206,7 @@ h1,h2,h3,h4,h5,h6{
 @media screen and (max-width:1000px){
 
 }
-
+/*  */
 body,*{
-    font-family: 'Source Serif Pro', serif;
+    font-family: "Times New Roman", Times, serif;
 }
