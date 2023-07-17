@@ -46,7 +46,7 @@
                     <!-- event images -->
                     <% for(let i=0;i<gallery[key][0].imglist.length;i++){%>
                         <div class="imageon">
-                            <img class="image" loading="lazy" src="<%=gallery[key][0].imglist[i]%>" alt="">
+                            <img class="image" loading="eager" src="<%=gallery[key][0].imglist[i]%>" alt="">
                         </div>
                         <%}%>
                 </div>
@@ -58,7 +58,6 @@
     <div class="footerposition">
         <%- include("partials/footer.ejs") %>
     </div>
-
 
     <script>
         // let imgdata = document.getElementsByClassName('image');

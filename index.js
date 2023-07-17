@@ -1,12 +1,12 @@
 const express = require('express');
-const port = 80||process.env.port;
+const port = 8000||process.env.port;
 const app = express();
 const path = require('path');
 const compression = require('compression');
 const modelData = require("./readdb");
 require("dotenv").config({ path: "./config/config.env" });
 
-const {activity , upComing} = require('./readsheet');
+// const {activity , upComing} = require('./readsheet');
 
 // setting navigation routes
 const navroutes = require('./routes/navroutes.js');
@@ -33,17 +33,9 @@ app.use('/',navroutes)
 app.get('/',async(req,res)=>{
     // adding data dynamically to page
     let data = {};
-    try {
-        data = await upComing();
-        
-    }
-    catch(e){
-        console.log( " getting errors from google spreadsheets " );
-    }
-    let festData = await modelData.festobj();
     let context = {
         events : data,
-        projects : festData
+        // projects : festData
     }
     res.render('index.ejs',context);
 })
