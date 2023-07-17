@@ -1,11 +1,10 @@
 {
   "name": "node",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js",
+    "start": "node index.js",
     "dev": "nodemon index.js"
   },
   "author": "",
@@ -18,5 +17,14 @@
     "google-spreadsheet": "^3.3.0",
     "mongoose": "^6.6.5",
     "nodemon": "^2.0.20"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lakshaynailwal/Nirmaan-2k22.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Lakshaynailwal/Nirmaan-2k22/issues"
+  },
+  "homepage": "https://github.com/Lakshaynailwal/Nirmaan-2k22#readme",
+  "description": ""
 }

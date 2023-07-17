@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const {galleryarr,festobj,team} = require('../readdb.js');
-const {activity , upComing} = require('../readsheet');
-
+const {galleryarr,eventobj,team} = require('../readdb.js');
+// const {activity , upComing} = require('../readsheet');
+const event = require("../models/event.js");
 
 // setting navigation routes
 router.get('/gallery', async (req, res) => {
@@ -11,14 +11,6 @@ router.get('/gallery', async (req, res) => {
         gallery : data
     }
     res.render('gallery.ejs',context);
-})
-
-router.get('/fest',async(req,res)=>{
-    let data = await festobj()
-    let context = {
-        festdata:data
-    }
-    res.render('fest.ejs',context);
 })
 
 router.get('/ourteam', async (req, res) => {
@@ -30,10 +22,9 @@ router.get('/ourteam', async (req, res) => {
 })
 
 router.get('/events', async (req, res) => {
-    let data = await activity();
-    // console.log(data);
+    let eventData = await eventobj();
     let context = {
-        events: data
+        events: eventData
     }
     res.render('events.ejs', context);
 })
@@ -41,22 +32,15 @@ router.get('/events', async (req, res) => {
 router.get('/eventname',async(req,res)=>{
     let num = req.query.num;
     let eventname = req.query.eventname;
-    let data = {};
-    try {
-        
-        data = await activity();
-        
-    } catch (error) {
-        console.log( "error from google spreadsheet" );
-    }
-    let elem = data[eventname][num];
-    let winner=0
-    if(elem.winner){
-        winner = elem.winner.split(',');
-    }
+
+    // console.log(eventname);
+
+    let data = await event.findOne({topic: eventname});
+    // console.log(data.winners);
+    let winner = 0;
     let context = {
-        name : req.query.event,
-        eventdata:elem,
+        name : req.query.eventname,
+        eventdata:data,
         winnerlist:winner
     }
     res.render('eventredirect.ejs',context)

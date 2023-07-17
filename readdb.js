@@ -1,6 +1,13 @@
 const OurTeam = require('./models/team');  //getting data through database
-const fests = require('./models/fest.js');  //getting data through db
+// const events = require('./models/event.js');  //getting data through db
 const gallery = require('./models/gallery');  //getting gallery data through database
+const events = require("./models/event.js"); // getting data of events
+
+// getting events data
+// async function eventdata(){
+//     const event = await events.find({});
+
+// }
 
 
 // getting team data
@@ -24,25 +31,24 @@ async function teamdata() {
 }
 
 
-// getting fest data
-// 
+// getting event data
 
-async function festdata() {
-    const festitem = await fests.find({});
-    let festobj = {};
-    for (let i = 0; i < festitem.length; i++) {
-        festobj[festitem[i].title] = "";
+async function eventdata() {
+    const eventitem = await events.find({});
+    let eventobj = {};
+    for (let i = 0; i < eventitem.length; i++) {
+        eventobj[eventitem[i].title] = "";
     }
-    for (key in festobj) {
+    for (key in eventobj) {
         let arr = [];
-        for (let j = 0; j < festitem.length; j++) {
-            if (key == festitem[j].title) {
-                arr.push(festitem[j]);
+        for (let j = 0; j < eventitem.length; j++) {
+            if (key == eventitem[j].title) {
+                arr.push(eventitem[j]);
             }
         }
-        festobj[key] = arr;
+        eventobj[key] = arr;
     }
-    return festobj
+    return eventobj
 }
 
 // getting gallery data
@@ -66,4 +72,4 @@ async function gallerydata() {
 }
 
 
-module.exports = { "galleryarr": gallerydata, "festobj": festdata, "team": teamdata };
+module.exports = { "galleryarr": gallerydata, "eventobj": eventdata, "team": teamdata };
